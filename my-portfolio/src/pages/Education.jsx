@@ -4,7 +4,7 @@ import EducationClients from '../components/education/EducationClients';
 import { EducationProvider } from '../context/EducationContext';
 import { motion } from 'framer-motion';
 
-const About = () => {
+const Education = () => {
 	return (
 		<EducationProvider>
 			<motion.div
@@ -37,4 +37,4 @@ const About = () => {
 	);
 };
 
-export default About;
+export default Education;

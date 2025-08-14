@@ -4,7 +4,7 @@ import ExperienceClients from '../components/experience/ExperienceClients';
 import { ExperienceProvider } from '../context/ExperienceContext';
 import { motion } from 'framer-motion';
 
-const About = () => {
+const Experience = () => {
 	return (
 		<ExperienceProvider>
 			<motion.div
@@ -37,4 +37,4 @@ const About = () => {
 	);
 };
 
-export default About;
+export default Experience;
