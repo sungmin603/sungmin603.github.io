@@ -3,8 +3,8 @@
     "static/js/0.ec7bc712.chunk.js": "/static/js/0.ec7bc712.chunk.js",
     "static/js/0.ec7bc712.chunk.js.map": "/static/js/0.ec7bc712.chunk.js.map",
     "main.css": "/static/css/main.c3e31854.chunk.css",
-    "main.js": "/static/js/main.09fada83.chunk.js",
-    "main.js.map": "/static/js/main.09fada83.chunk.js.map",
+    "main.js": "/static/js/main.c264140a.chunk.js",
+    "main.js.map": "/static/js/main.c264140a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d7bed74c.js",
     "runtime-main.js.map": "/static/js/runtime-main.d7bed74c.js.map",
     "static/js/3.0b75e69d.chunk.js": "/static/js/3.0b75e69d.chunk.js",
@@ -31,8 +31,8 @@
     "static/media/App.css": "/static/media/GeneralSans-VariableItalic.e4ae865b.woff",
     "static/media/developer-dark.3f07bd13.svg": "/static/media/developer-dark.3f07bd13.svg",
     "static/media/developer.ef097afb.svg": "/static/media/developer.ef097afb.svg",
-    "static/media/logo-dark.da150d1d.svg": "/static/media/logo-dark.da150d1d.svg",
-    "static/media/logo-light.27ea19a5.svg": "/static/media/logo-light.27ea19a5.svg",
+    "static/media/logo-dark.1a1a7b75.svg": "/static/media/logo-dark.1a1a7b75.svg",
+    "static/media/logo-light.854e5b12.svg": "/static/media/logo-light.854e5b12.svg",
     "static/media/mobile-project-1.jpg": "/static/media/mobile-project-1.0aa0cb76.jpg",
     "static/media/mobile-project-2.jpg": "/static/media/mobile-project-2.a5aae786.jpg",
     "static/media/profile.jpeg": "/static/media/profile.a7095062.jpeg",
@@ -45,6 +45,6 @@
     "static/js/runtime-main.d7bed74c.js",
     "static/js/3.0b75e69d.chunk.js",
     "static/css/main.c3e31854.chunk.css",
-    "static/js/main.09fada83.chunk.js"
+    "static/js/main.c264140a.chunk.js"
   ]
 }
