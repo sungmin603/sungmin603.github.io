@@ -7,31 +7,33 @@ const EducationBio = () => {
   const { education } = useContext(EducationContext);
 
   return (
-    <div className="block sm:flex sm:gap-10 mt-10 sm:mt-20">
-      {/* 왼쪽 프로필 */}
-      <div className="w-full sm:w-1/4 mb-7 sm:mb-0 flex justify-center">
-        <img src={profileImage} className="rounded-lg w-48 sm:w-64" alt="Profile" />
+    <div className="flex flex-col sm:flex-row gap-10 mt-10 sm:mt-20">
+      {/* 프로필 */}
+      <div className="w-full sm:w-1/4 flex justify-center">
+        <img
+          src={profileImage}
+          className="rounded-lg w-48 sm:w-64"
+          alt="Profile"
+        />
       </div>
 
-      {/* 오른쪽 타임라인 */}
-      <div className="w-full sm:w-3/4 relative pl-8">
-        {/* 세로 라인 */}
-        <div className="absolute top-0 left-2 h-full border-l-2 border-gray-300 dark:border-gray-600"></div>
-
+      {/* 타임라인 */}
+      <div className="w-full sm:w-3/4 relative pl-8 before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-2 before:border-l-2 before:border-gray-300 dark:before:border-gray-600">
         <ul className="space-y-8">
           {education.map((item) => (
             <li key={item.id} className="relative">
-              {/* 타임라인 점 */}
+              {/* 점 */}
               <div className="absolute -left-[7px] w-4 h-4 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800"></div>
 
               {/* 카드 */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-                {/* 학위 타입 라벨 */}
                 <span
                   className={`inline-block px-3 py-1 text-sm font-medium rounded-full mb-2
-                    ${item.type === "Bachelor" ? "bg-blue-100 text-blue-700" :
-                      item.type === "Master" ? "bg-green-100 text-green-700" :
-                      "bg-purple-100 text-purple-700"}`}
+                    ${item.type === "Bachelor"
+                      ? "bg-blue-100 text-blue-700"
+                      : item.type === "Master"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-purple-100 text-purple-700"}`}
                 >
                   {item.type}
                 </span>
