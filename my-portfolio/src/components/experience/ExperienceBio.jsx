@@ -1,3 +1,4 @@
+// src/components/experience/ExperienceBio.jsx
 // import profileImage from '../../images/profile.jpeg';
 import { useContext } from 'react';
 import ExperienceContext from '../../context/ExperienceContext';
@@ -26,7 +27,7 @@ const ExperienceBio = () => {
             </div>
 
             {/* 경력 상세 */}
-            <div>
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex-1">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 {item.company}
               </h3>

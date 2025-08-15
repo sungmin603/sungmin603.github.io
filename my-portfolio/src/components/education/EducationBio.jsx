@@ -1,3 +1,4 @@
+// src/components/education/EducationBio.jsx
 import profileImage from '../../images/profile.jpeg';
 import { useContext } from 'react';
 import EducationContext from '../../context/EducationContext';
@@ -23,8 +24,9 @@ const EducationBio = () => {
               {/* 타임라인 점 */}
               <div className="absolute -left-[7px] w-4 h-4 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800"></div>
 
-              <div>
-                {/* 학위 타입 */}
+              {/* 카드 */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                {/* 학위 타입 라벨 */}
                 <span
                   className={`inline-block px-3 py-1 text-sm font-medium rounded-full mb-2
                     ${item.type === "Bachelor" ? "bg-blue-100 text-blue-700" :
@@ -34,14 +36,11 @@ const EducationBio = () => {
                   {item.type}
                 </span>
 
-                {/* 학교명 / 전공 / 기간 */}
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   {item.school}
                 </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">{item.degree}</p>
                 <p className="text-sm text-gray-400">{item.period}</p>
-
-                {/* 상세 설명 */}
                 {item.bio && (
                   <p className="mt-2 text-gray-600 dark:text-gray-300">{item.bio}</p>
                 )}
