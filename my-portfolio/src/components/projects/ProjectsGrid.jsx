@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import ProjectSingle from './ProjectSingle';
+import FeaturedProject from "./FeaturedProject";
 import { ProjectsContext } from '../../context/ProjectsContext';
 import ProjectsFilter from './ProjectsFilter';
 
@@ -15,114 +16,68 @@ const ProjectsGrid = () => {
 		selectProjectsByCategory,
 	} = useContext(ProjectsContext);
 
+	// 플래그로 분리
+	const featuredProjects = projects.filter((p) => p.isFeatured);
+	const otherProjects = projects.filter((p) => !p.isFeatured);
+
 	return (
 		<section className="py-5 sm:py-10 mt-5 sm:mt-10">
-			<div className="text-center">
-				<p className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
-					Projects portfolio
-				</p>
-			</div>
+		<div className="text-center">
+			<p className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
+			Projects Portfolio
+			</p>
+		</div>
 
-			<div className="mt-10 sm:mt-16">
-				<h3
-					className="font-general-regular 
-                        text-center text-secondary-dark
-                        dark:text-ternary-light
-                        text-md
-                        sm:text-xl
-                        mb-3
-                        "
-				>
-					Search projects by title or filter by category
+		{/* Featured Projects */}
+		<div className="mt-12">
+			<h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-primary-dark dark:text-primary-light">
+			Featured Projects
+			</h2>
+			{featuredProjects.map((project) => (
+			<FeaturedProject
+				key={project.id}
+				title={project.title}
+				description={project.description}
+				techStack={project.tech}
+				image={project.img}
+				link={project.link}
+			/>
+			))}
+		</div>
+
+		{/* Other Projects */}
+		<div className="mt-16 max-w-4xl mx-auto">
+		<h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-primary-dark dark:text-primary-light">
+			Other Projects
+		</h2>
+		<ul className="space-y-4">
+			{otherProjects.map((project) => (
+			<li
+				key={project.id}
+				className="flex items-center space-x-4 p-4 border rounded-lg shadow-sm hover:shadow-md transition"
+			>
+				{/* 작은 이미지 */}
+				<img
+				src={project.img}
+				alt={project.title}
+				className="w-14 h-14 object-contain rounded-md"
+				/>
+				{/* 텍스트 */}
+				<div>
+				<h3 className="text-lg font-semibold text-ternary-dark dark:text-ternary-light">
+					{project.title}
 				</h3>
-				<div
-					className="
-                        flex
-                        justify-between
-                        border-b border-primary-light
-                        dark:border-secondary-dark
-                        pb-3
-                        gap-3
-                        "
-				>
-					<div className="flex justify-between gap-2">
-						<span
-							className="
-                                hidden
-                                sm:block
-                                bg-primary-light
-                                dark:bg-ternary-dark
-                                p-2.5
-                                shadow-sm
-                                rounded-xl
-                                cursor-pointer
-                                "
-						>
-							<FiSearch className="text-ternary-dark dark:text-ternary-light w-5 h-5"></FiSearch>
-						</span>
-						<input
-							onChange={(e) => {
-								setSearchProject(e.target.value);
-							}}
-							className="font-general-medium 
-                                pl-3
-                                pr-1
-                                sm:px-4
-                                py-2
-                                border 
-                            border-gray-200
-                                dark:border-secondary-dark
-                                rounded-lg
-                                text-sm
-                                sm:text-md
-                                bg-secondary-light
-                                dark:bg-ternary-dark
-                                text-primary-dark
-                                dark:text-ternary-light
-                                "
-							id="name"
-							name="name"
-							type="search"
-							required=""
-							placeholder="Search Projects"
-							aria-label="Name"
-						/>
-					</div>
-
-					<ProjectsFilter setSelectProject={setSelectProject} />
+				<p className="text-sm text-gray-600 dark:text-gray-400">
+					{project.description}
+				</p>
 				</div>
-			</div>
+			</li>
+			))}
+		</ul>
+		</div>
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
-				{selectProject
-					? selectProjectsByCategory.map((project) => (
-							<ProjectSingle
-								title={project.title}
-								category={project.category}
-								image={project.img}
-								key={project.id}
-							/>
-					  ))
-					: searchProject
-					? searchProjectsByTitle.map((project) => (
-							<ProjectSingle
-								title={project.title}
-								category={project.category}
-								image={project.img}
-								key={project.id}
-							/>
-					  ))
-					: projects.map((project) => (
-							<ProjectSingle
-								title={project.title}
-								category={project.category}
-								image={project.img}
-								key={project.id}
-							/>
-					  ))}
-			</div>
 		</section>
 	);
-};
+	};
 
 export default ProjectsGrid;

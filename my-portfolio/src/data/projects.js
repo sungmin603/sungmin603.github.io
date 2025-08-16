@@ -2,8 +2,8 @@
 import WebImage1 from '../images/web-project-1.jpg';
 import WebImage2 from '../images/web-project-2.jpg';
 import MobileImage1 from '../images/mobile-project-1.jpg';
-import MobileImage2 from '../images/mobile-project-2.jpg';
-import UIImage1 from '../images/ui-project-1.jpg';
+// import MobileImage2 from '../images/mobile-project-2.jpg';
+// import UIImage1 from '../images/ui-project-1.jpg';
 import UIImage2 from '../images/ui-project-2.jpg';
 
 export const projectsData = [
@@ -20,15 +20,23 @@ export const projectsData = [
 	},
 	{
 		id: 2,
-		title: 'Phoenix Digital Agency',
-		category: 'Mobile Application',
-		img: MobileImage2,
+		title: "RAG-LLM Application",
+		description: "A retrieval-augmented generation pipeline integrating LLMs for domain-specific Q&A.",
+		tech: "Python, LangChain, FastAPI, Docker",
+		img: "/images/projects/rag-llm.png",
+		link: "https://github.com/yourname/rag-llm",
+		category: "AI",
+		isFeatured: true,
 	},
 	{
 		id: 3,
-		title: 'Project Management UI',
-		category: 'UI/UX Design',
-		img: UIImage1,
+		title: "Deep Learning Image Processing",
+		description: "Implemented deep learning models for image denoising and super-resolution.",
+		tech: "PyTorch, OpenCV",
+		img: "/images/projects/dl-image.png",
+		link: "https://github.com/yourname/dl-image",
+		category: "AI",
+		isFeatured: true,
 	},
 	{
 		id: 4,
