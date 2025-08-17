@@ -10,21 +10,13 @@ export const experienceData = {
 	{
 		id: 1,
 		company: "Samsung Electronics",
-		position: "Staff Engineer(ML Engineer)",
-		period: "2025 - present",
-		description: "Development of AI projects and data science in R&D center.",
+		position: "Staff Engineer(Full-stack Engineer, ML Engineer)",
+		period: "2022 - present",
+		description: "Development of AI projects, webpage, api, server, DB and visualization dashboard in R&D center.",
 		logo: Image1
 	},
 	{
 		id: 2,
-		company: "Samsung Electronics",
-		position: "Staff Engineer(Full-stack Engineer)",
-		period: "2022 - 2024",
-		description: "Development of webpage, api, server, DB and visualization dashboard for IT projects in R&D center.",
-		logo: Image1
-	},
-	{
-		id: 3,
 		company: "Samsung Electronics",
 		position: "Engineer(Data Scientist)",
 		period: "2018 - 2021",
@@ -32,7 +24,7 @@ export const experienceData = {
 		logo: Image1
 	},
 	{
-		id: 4,
+		id: 3,
 		company: "Hyundai Mobis",
 		position: "Research Engineer",
 		period: "2017 - 2018",
@@ -40,7 +32,7 @@ export const experienceData = {
 		logo: Image2
 	},
 	{
-		id: 5,
+		id: 4,
 		company: "Hyundai Mipo",
 		position: "Internship",
 		period: "2014 - 2014",
@@ -48,7 +40,7 @@ export const experienceData = {
 		logo: Image3
 	},
 	{
-		id: 6,
+		id: 5,
 		company: "Hyundai Mipo",
 		position: "Internship",
 		period: "2013 - 2013",
@@ -62,21 +54,21 @@ export const experienceData = {
       title: "Practical ETL Course",
       host: "Samsung internal lecture",
       period: "2024 - present",
-      description: "Conducted ETL training for company environments.",
+      description: "Delivered practical training on ETL processes tailored to corporate environments.",
 	},
     {
       id: 2,
-      title: "Data Analysis basic",
+      title: "Fundamentals of Data Analysis",
       host: "Samsung internal lecture",
       period: "2024 - present",
-      description: "Conducted training for manufacturing data on data analysis.",
+      description: "Conducted training on data analysis methods applied to semiconductor manufacturing data.",
     },
 	{
       id: 3,
-	  title: "Spotfire 특강",
+	  title: "Spotfire Workshop",
       host: "Samsung internal lecture",
       period: "2024 - present",
-      description: "training and building workshop on spotfire dashboard.",
+      description: "Led training and hands-on workshops on building and utilizing Spotfire dashboards.",
     },
 	],
 	publication : [

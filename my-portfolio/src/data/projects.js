@@ -4,7 +4,7 @@ import WebImage2 from '../images/web-project-2.jpg';
 import MobileImage1 from '../images/mobile-project-1.jpg';
 // import MobileImage2 from '../images/mobile-project-2.jpg';
 // import UIImage1 from '../images/ui-project-1.jpg';
-import UIImage2 from '../images/ui-project-2.jpg';
+// import UIImage2 from '../images/ui-project-2.jpg';
 
 export const projectsData = [
 	{
@@ -18,7 +18,7 @@ export const projectsData = [
 	},
 	{
 		id: 2,
-		title: "DL image processing Web-service",
+		title: "DL-base Image Processing Platform",
 		description: "Implemented deep learning models for image denoising and super-resolution.",
 		tech: "Python, Image processing, LLM, Vue, OpenCV",
 		img: "/images/projects/dl-image.png",
@@ -28,17 +28,7 @@ export const projectsData = [
 	},
 	{
 		id: 3,
-		title: "MLOps platform",
-		description: "Implemented deep learning models for image denoising and super-resolution.",
-		tech: "Python, nginx, streamlit, FastAPI, Docker",
-		img: "/images/projects/dl-image.png",
-		link: "https://github.com/yourname/dl-image",
-		category: "AI",
-		isFeatured: true,
-	},
-	{
-		id: 4,
-		title: "Data Science Web-service",
+		title: "Data Analytics Platform",
 		description: "Implemented deep learning models for image denoising and super-resolution.",
 		tech: "Python, nginx, streamlit, FastAPI, Docker",
 		img: "/images/projects/dl-image.png",
@@ -47,11 +37,21 @@ export const projectsData = [
 		isFeatured: true,
 	},	
 	{
-		id: 5,
-		title: "Web-service and Database",
+		id: 4,
+		title: "Web-DB Platform",
 		description: "A retrieval-augmented generation pipeline integrating LLMs for SQL query Q&A.",
-		tech: "Python, LangGraph, Qdrant, FastAPI, Docker, Mendix",
+		tech: "Python, Airflow, MongoDB, Mysql, FastAPI, Docker, Mendix",
 		img: "/images/projects/rag-llm.png",
+		category: "AI",
+		isFeatured: true,
+	},
+	{
+		id: 5,
+		title: "Infrastructure and System Integration",
+		description: "Implemented deep learning models for image denoising and super-resolution.",
+		tech: "Linux, Docker, K8S, Nginx, Nexus, Mlflow, Redis",
+		img: "/images/projects/dl-image.png",
+		link: "https://github.com/yourname/dl-image",
 		category: "AI",
 		isFeatured: true,
 	},

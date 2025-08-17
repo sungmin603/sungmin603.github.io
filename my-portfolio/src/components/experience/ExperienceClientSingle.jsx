@@ -1,13 +1,9 @@
-const ExperienceClientSingle = ({ title, image }) => {
-	return (
-		<>
-			<img
-				src={image}
-				className="w-64 py-5 px-10 border bg-secondary-light border-ternary-light dark:border-ternary-dark shadow-sm rounded-lg mb-8 cursor-pointer"
-				alt={title}
-			/>
-		</>
-	);
-};
-
-export default ExperienceClientSingle;
+// /portfolio/src/components/experience/ExperienceClientSingle.jsx
+export default function ExperienceClientSingle({ logo, company }) {
+  return (
+    <div className="flex flex-col items-center">
+      {logo && <img src={logo} alt={company} className="w-16 h-16 object-contain" />}
+      <p className="mt-2 text-sm font-medium">{company}</p>
+    </div>
+  );
+}

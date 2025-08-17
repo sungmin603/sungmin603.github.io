@@ -1,16 +1,27 @@
-import React from 'react';
+// /portfolio/src/components/experience/CountItem.jsx
+export default function CountItem({ number, label }) {
+  return (
+    <div className="text-center">
+      <h3 className="text-3xl font-bold text-blue-500">{number}</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-300">{label}</p>
+    </div>
+  );
+}
 
-const CounterItem = ({ title, counter, measurement }) => {
-	return (
-		<div className="mb-20 sm:mb-0">
-			<h2 className="text-4xl text-center text-secondary-dark dark:text-secondary-light mb-2">
-				{counter} {measurement}
-			</h2>
-			<span className="font-general-regular block text-md text-center text-ternary-dark dark:text-ternary-light">
-				{title}
-			</span>
-		</div>
-	);
-};
 
-export default CounterItem;
+// import React from 'react';
+
+// const CounterItem = ({ title, counter, measurement }) => {
+// 	return (
+// 		<div className="mb-20 sm:mb-0">
+// 			<h2 className="text-4xl text-center text-secondary-dark dark:text-secondary-light mb-2">
+// 				{counter} {measurement}
+// 			</h2>
+// 			<span className="font-general-regular block text-md text-center text-ternary-dark dark:text-ternary-light">
+// 				{title}
+// 			</span>
+// 		</div>
+// 	);
+// };
+
+// export default CounterItem;

@@ -3,7 +3,7 @@ import { experienceData } from '../data/experienceData';
 import { clientsHeading as clientsPageHeading } from '../data/clientsData';
 import { clientsData as clientsDataJson } from '../data/clientsData';
 
-const ExperienceContext = createContext();
+export const ExperienceContext = createContext();
 
 export const ExperienceProvider = ({ children }) => {
 	const [experience, setExperience] = useState(experienceData);
