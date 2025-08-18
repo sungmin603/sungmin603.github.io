@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ExperienceContext } from "../../context/ExperienceContext";
 
 export default function ExperienceBio() {
-  const { work, teaching, publication, awards } = useContext(ExperienceContext);
+  const { work, teaching, publications, awards } = useContext(ExperienceContext);
 
   // 카드 레이아웃 공통
   const renderCard = (leftContent, rightContent) => (
@@ -71,7 +71,7 @@ export default function ExperienceBio() {
       <section>
         <h2 className="text-2xl font-bold mb-4">Publications</h2>
         <div className="space-y-6">
-          {publication.map((pub) =>
+          {publications.map((pub) =>
             renderCard(
               <span className="text-xl font-bold text-green-500">📖</span>,
               <div>
