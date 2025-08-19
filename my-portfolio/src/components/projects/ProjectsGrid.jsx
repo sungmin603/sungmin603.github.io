@@ -22,57 +22,57 @@ const ProjectsGrid = () => {
 
   return (
     <section className="py-5 sm:py-10 mt-5 sm:mt-10">
-      <div className="text-center">
-        <p className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
-          Projects Portfolio
-        </p>
-      </div>
-
       {/* Featured Projects → 카드(Grid) */}
-      <div className="mt-12">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-ternary-dark dark:text-ternary-light">
-          Featured Projects
+      <div className="mt-16 max-w-4xl mx-auto">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-primary-dark dark:text-primary-light">
+          Main Projects
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {featuredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-primary-dark rounded-lg shadow-md overflow-hidden flex flex-col"
+              className="flex flex-col border border-gray-200 dark:border-gray-700 rounded-lg shadow-md overflow-hidden h-96 bg-white dark:bg-gray-800"
             >
-              {/* 이미지 영역 (항상 동일한 크기) */}
+              {/* 이미지 영역 */}
               {project.img && (
-                <div className="w-full h-64 overflow-hidden">
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
               )}
 
-              {/* 카드 내용 */}
-              <div className="p-4 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-ternary-dark dark:text-ternary-light">
-                    {project.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-ternary-dark dark:text-ternary-light">
-                    {project.category}
-                  </p>
-                </div>
-                {project.description && (
-                  <p className="mt-2 text-sm text-ternary-dark dark:text-ternary-light line-clamp-3">
-                    {project.description}
-                  </p>
-                )}
+            {/* 텍스트 영역 */}
+            <div className="flex flex-col justify-between flex-1 p-4">
+              <div>
+                <h3 className="text-lg font-semibold text-ternary-dark dark:text-ternary-light mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+                  {project.description}
+                </p>
               </div>
+              {/* 카테고리 태그 */}
+              <div className="mt-2 flex flex-wrap gap-2">
+                {project.tech.map((cat, idx) => (
+                  <span
+                    key={idx}
+                    className="inline-block bg-blue-100 dark:bg-blue-700 text-blue-800 dark:text-blue-100 text-xs font-medium px-2 py-1 rounded-full"
+                  >
+                    {cat}
+                  </span>
+                ))}
+              </div>
+            </div>
             </div>
           ))}
         </div>
       </div>
 
+
+
       {/* Other Projects → 리스트(간단 UI) */}
-      <div className="mt-16 max-w-4xl mx-auto">
+      <div className="mt-16 max-w-4xl mx-auto pt-10">
         <h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-primary-dark dark:text-primary-light">
           Other Projects
         </h2>

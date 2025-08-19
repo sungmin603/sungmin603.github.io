@@ -46,7 +46,7 @@ export default function ExperienceBio() {
       </section>
 
       {/* Teaching */}
-      <section>
+      <section className="pt-10">
         <h3 className="text-2xl font-bold mb-6 text-ternary-dark dark:text-ternary-light">
           Teaching
         </h3>
@@ -82,7 +82,7 @@ export default function ExperienceBio() {
       </section>
 
       {/* Publications */}
-      <section>
+      <section className="pt-10">
         <h3 className="text-2xl font-bold mb-6 text-ternary-dark dark:text-ternary-light">
           Publications
         </h3>
@@ -101,7 +101,7 @@ export default function ExperienceBio() {
       </section>
 
       {/* Awards */}
-      <section>
+      <section className="pt-10">
         <h3 className="text-2xl font-bold mb-6 text-ternary-dark dark:text-ternary-light">
           Awards
         </h3>
