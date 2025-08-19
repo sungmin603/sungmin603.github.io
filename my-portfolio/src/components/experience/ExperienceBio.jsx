@@ -4,99 +4,119 @@ import { ExperienceContext } from "../../context/ExperienceContext";
 export default function ExperienceBio() {
   const { work, teaching, publications, awards } = useContext(ExperienceContext);
 
-  // 카드 레이아웃 공통
-  const renderCard = (leftContent, rightContent) => (
-    <div className="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 p-4 border-l-2 border-gray-300 dark:border-gray-600 relative bg-white dark:bg-gray-800 rounded-lg shadow-sm">
-      <div className="flex-shrink-0 w-20 h-20 flex items-center justify-center">
-        {leftContent}
-      </div>
-      <div className="flex-1">{rightContent}</div>
-      <span className="absolute left-[-10px] top-6 w-4 h-4 bg-blue-500 rounded-full"></span>
-    </div>
-  );
-
   return (
-    <div className="space-y-12 px-2 md:px-0">
+    <div className="space-y-20 mt-10 sm:mt-20 font-general-regular">
       {/* Work Experience */}
       <section>
-        <h2 className="text-2xl font-bold mb-4">Work Experience</h2>
-        <div className="space-y-6">
-          {work.map((item) =>
-            renderCard(
-              item.logo ? (
-                <img
-                  src={item.logo}
-                  alt={item.company}
-                  className="w-full h-full object-contain"
-                />
-              ) : null,
-              <div>
-                <h3 className="font-semibold text-lg">
-                  {item.position} @ {item.company}
-                </h3>
-                <p className="text-sm text-gray-500 mb-2">{item.period}</p>
-                {Array.isArray(item.description) ? (
-                  <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-                    {item.description.map((desc, idx) => (
-                      <li key={idx}>{desc}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+        <h3 className="text-2xl font-bold mb-8 text-ternary-dark dark:text-ternary-light">
+          Work Experience
+        </h3>
+        <div className="space-y-12">
+          {work.map((item) => (
+            <div
+              key={item.id}
+              className="block sm:flex sm:gap-10 p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
+            >
+              {/* 회사 로고 */}
+              <div className="w-full sm:w-1/4 mb-7 sm:mb-0 flex justify-center sm:justify-start">
+                {item.logo && (
+                  <img
+                    src={item.logo}
+                    alt={item.company}
+                    className="rounded-lg w-full sm:w-64 md:w-80 lg:w-96 h-auto object-contain"
+                  />
                 )}
               </div>
-            )
-          )}
+
+              {/* 텍스트 내용 */}
+              <div className="w-full sm:w-3/4 text-left">
+                <h4 className="text-xl font-semibold text-ternary-dark dark:text-ternary-light">
+                  {item.company}
+                </h4>
+                <p className="mt-2 text-ternary-dark dark:text-ternary-light">
+                  ({item.period}): {item.position} 
+                </p>
+                <p className="mt-2 text-ternary-dark dark:text-ternary-light">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Teaching & Lectures */}
+      {/* Teaching */}
       <section>
-        <h2 className="text-2xl font-bold mb-4">Teaching & Lectures</h2>
-        <div className="space-y-6">
-          {teaching.map((item) =>
-            renderCard(
-              <span className="text-xl font-bold text-blue-500">🎓</span>, // 아이콘 대신 로고 없을 때 표시
-              <div>
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-sm text-gray-500 mb-2">{item.host} · {item.period}</p>
-                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+        <h3 className="text-2xl font-bold mb-8 text-ternary-dark dark:text-ternary-light">
+          Teaching
+        </h3>
+        <div className="space-y-12">
+          {teaching.map((item) => (
+            <div
+              key={item.id}
+              className="block sm:flex sm:gap-10 p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
+            >
+              <div className="w-full sm:w-1/4 mb-7 sm:mb-0 flex justify-center sm:justify-start">
+                {item.logo && (
+                  <img
+                    src={item.logo}
+                    alt={item.institution}
+                    className="rounded-lg w-full sm:w-64 md:w-80 lg:w-96 h-auto object-contain"
+                  />
+                )}
               </div>
-            )
-          )}
+              <div className="w-full sm:w-3/4 text-left">
+                <h4 className="text-lg font-semibold text-ternary-dark dark:text-ternary-light">
+                  {item.course}
+                </h4>
+                <p className="mt-2 text-ternary-dark dark:text-ternary-light">
+                  {item.institution} ({item.period})
+                </p>
+                <p className="mt-2 text-ternary-dark dark:text-ternary-light">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Publications */}
       <section>
-        <h2 className="text-2xl font-bold mb-4">Publications</h2>
-        <div className="space-y-6">
-          {publications.map((pub) =>
-            renderCard(
-              <span className="text-xl font-bold text-green-500">📖</span>,
-              <div>
-                <span className="font-semibold">{pub.title}</span>
-                <p className="text-sm text-gray-500">({pub.type}, {pub.publisher}, {pub.year})</p>
-              </div>
-            )
-          )}
-        </div>
+        <h3 className="text-2xl font-bold mb-8 text-ternary-dark dark:text-ternary-light">
+          Publications
+        </h3>
+        <ul className="space-y-6">
+          {publications.map((pub) => (
+            <li
+              key={pub.id}
+              className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
+            >
+              <p className="text-ternary-dark dark:text-ternary-light">
+                [{pub.type}] {pub.title} – ({pub.publisher}, {pub.year})
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Awards */}
       <section>
-        <h2 className="text-2xl font-bold mb-4">Awards</h2>
-        <div className="space-y-6">
-          {awards.map((award) =>
-            renderCard(
-              <span className="text-xl font-bold text-yellow-500">🏆</span>,
-              <div>
-                <span className="font-semibold">{award.title}</span>
-                <p className="text-sm text-gray-500">({award.organization}, {award.year})</p>
-              </div>
-            )
-          )}
-        </div>
+        <h3 className="text-2xl font-bold mb-8 text-ternary-dark dark:text-ternary-light">
+          Awards
+        </h3>
+        <ul className="space-y-6">
+          {awards.map((award) => (
+            <li
+              key={award.id}
+              className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
+            >
+              <p className="text-ternary-dark dark:text-ternary-light">
+                {award.title} – ({award.organization}, {award.year})
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );

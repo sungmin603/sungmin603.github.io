@@ -51,22 +51,22 @@ export const experienceData = {
 	teaching : [
 	{
       id: 1,
-      title: "Practical ETL Course",
-      host: "Samsung internal lecture",
+      course: "Practical ETL Course",
+      institution: "Samsung internal lecture",
       period: "2024 - present",
       description: "Delivered practical training on ETL processes tailored to corporate environments.",
 	},
     {
       id: 2,
-      title: "Fundamentals of Data Analysis",
-      host: "Samsung internal lecture",
+      course: "Fundamentals of Data Analysis",
+      institution: "Samsung internal lecture",
       period: "2024 - present",
       description: "Conducted training on data analysis methods applied to semiconductor manufacturing data.",
     },
 	{
       id: 3,
-	  title: "Spotfire Workshop",
-      host: "Samsung internal lecture",
+	  course: "Spotfire Workshop",
+      institution: "Samsung internal lecture",
       period: "2024 - present",
       description: "Led training and hands-on workshops on building and utilizing Spotfire dashboards.",
     },

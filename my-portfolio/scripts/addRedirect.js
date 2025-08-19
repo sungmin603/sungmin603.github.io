@@ -4,15 +4,22 @@ const path = require("path");
 const filePath = path.join(__dirname, "../build/404.html");
 let html = fs.readFileSync(filePath, "utf8");
 
-// SPA redirect: 잘못된 경로 접근 시 index.html 로 로드
-// 브라우저 경로 그대로 유지
+// GitHub Pages SPA redirect
+// 잘못된 경로 접근 시 index.html을 불러오되, 브라우저 주소는 그대로 유지
 const redirectScript = `
 <script type="text/javascript">
-  // 현재 경로가 index.html이 아닌 경우
-  if (!location.pathname.endsWith('index.html')) {
-    // index.html 로 로드, 브라우저 경로 유지
-    location.replace(location.origin + '/index.html' + location.search + location.hash);
-  }
+  (function() {
+    var redirectPath = sessionStorage.getItem("redirectPath");
+    if (!redirectPath) {
+      // 404.html이 로드된 경우, 현재 경로를 저장하고 index.html로 이동
+      sessionStorage.setItem("redirectPath", location.pathname + location.search + location.hash);
+      window.location.replace(location.origin + location.pathname.replace(/\\/[^/]*$/, '') + "/index.html");
+    } else {
+      // index.html이 로드된 경우, 저장된 경로로 주소창만 복원
+      history.replaceState(null, "", redirectPath);
+      sessionStorage.removeItem("redirectPath");
+    }
+  })();
 </script>
 `;
 
