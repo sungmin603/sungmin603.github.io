@@ -30,17 +30,43 @@ const ProjectsGrid = () => {
 
       {/* Featured Projects → 카드(Grid) */}
       <div className="mt-12">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-primary-dark dark:text-primary-light">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-ternary-dark dark:text-ternary-light">
           Featured Projects
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {featuredProjects.map((project) => (
-            <ProjectSingle
+            <div
               key={project.id}
-              title={project.title}
-              category={project.category}
-              image={project.img}
-            />
+              className="bg-white dark:bg-primary-dark rounded-lg shadow-md overflow-hidden flex flex-col"
+            >
+              {/* 이미지 영역 (항상 동일한 크기) */}
+              {project.img && (
+                <div className="w-full h-64 overflow-hidden">
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+
+              {/* 카드 내용 */}
+              <div className="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-ternary-dark dark:text-ternary-light">
+                    {project.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-ternary-dark dark:text-ternary-light">
+                    {project.category}
+                  </p>
+                </div>
+                {project.description && (
+                  <p className="mt-2 text-sm text-ternary-dark dark:text-ternary-light line-clamp-3">
+                    {project.description}
+                  </p>
+                )}
+              </div>
+            </div>
           ))}
         </div>
       </div>

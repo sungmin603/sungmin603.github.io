@@ -8,7 +8,7 @@ export default function ExperienceBio() {
     <div className="space-y-20 mt-10 sm:mt-20 font-general-regular">
       {/* Work Experience */}
       <section>
-        <h3 className="text-2xl font-bold mb-8 text-ternary-dark dark:text-ternary-light">
+        <h3 className="text-2xl font-bold mb-6 text-ternary-dark dark:text-ternary-light">
           Work Experience
         </h3>
         <div className="space-y-12">
@@ -47,7 +47,7 @@ export default function ExperienceBio() {
 
       {/* Teaching */}
       <section>
-        <h3 className="text-2xl font-bold mb-8 text-ternary-dark dark:text-ternary-light">
+        <h3 className="text-2xl font-bold mb-6 text-ternary-dark dark:text-ternary-light">
           Teaching
         </h3>
         <div className="space-y-12">
@@ -83,7 +83,7 @@ export default function ExperienceBio() {
 
       {/* Publications */}
       <section>
-        <h3 className="text-2xl font-bold mb-8 text-ternary-dark dark:text-ternary-light">
+        <h3 className="text-2xl font-bold mb-6 text-ternary-dark dark:text-ternary-light">
           Publications
         </h3>
         <ul className="space-y-6">
@@ -102,7 +102,7 @@ export default function ExperienceBio() {
 
       {/* Awards */}
       <section>
-        <h3 className="text-2xl font-bold mb-8 text-ternary-dark dark:text-ternary-light">
+        <h3 className="text-2xl font-bold mb-6 text-ternary-dark dark:text-ternary-light">
           Awards
         </h3>
         <ul className="space-y-6">
