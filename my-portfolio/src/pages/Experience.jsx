@@ -1,6 +1,6 @@
 import ExperienceBio from '../components/experience/ExperienceBio';
-import ExperienceCounter from '../components/experience/ExperienceCounter';
-import ExperienceClients from '../components/experience/ExperienceClients';
+// import ExperienceCounter from '../components/experience/ExperienceCounter';
+// import ExperienceClients from '../components/experience/ExperienceClients';
 import { ExperienceProvider } from '../context/ExperienceContext';
 import { motion } from 'framer-motion';
 
@@ -17,7 +17,7 @@ const Experience = () => {
 			</motion.div>
 
 			{/** Counter without paddings */}
-			<motion.div
+			{/* <motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
@@ -32,7 +32,7 @@ const Experience = () => {
 				className="container mx-auto"
 			>
 				<ExperienceClients />
-			</motion.div>
+			</motion.div> */}
 		</ExperienceProvider>
 	);
 };

@@ -1,8 +1,11 @@
 // Import images
-import Image1 from '../images/brands/Samsung.png';
-import Image2 from '../images/brands/HyundaiMobis.png';
-import Image3 from '../images/brands/hyundaiMipo.jpg';
-import Image4 from '../images/brands/SamsungHeavyindustry.png';
+import WorkImg1 from '../images/brands/Samsung.png';
+import WorkImg2 from '../images/brands/HyundaiMobis.png';
+import WorkImg3 from '../images/brands/hyundaiMipo.jpg';
+import WorkImg4 from '../images/brands/SamsungHeavyindustry.png';
+import TeachingImg1 from '../images/teaching1.png';
+import TeachingImg2 from '../images/teaching2.jpg';
+import TeachingImg3 from '../images/teaching3.jpg';
 
 
 export const experienceData = {
@@ -13,7 +16,7 @@ export const experienceData = {
 		position: "Staff Engineer(Full-stack Engineer, ML Engineer)",
 		period: "2022 - present",
 		description: ["Development of AI projects, webpage, api, server, DB and visualization dashboard in R&D center."],
-		logo: Image1
+		logo: WorkImg1
 	},
 	{
 		id: 2,
@@ -21,7 +24,7 @@ export const experienceData = {
 		position: "Engineer(Data Scientist)",
 		period: "2018 - 2021",
 		description: ["Root-cause Analysis in DRAM(D1z, D1a, D1b, D1c) and developing auto analysis solution."],
-		logo: Image1
+		logo: WorkImg1
 	},
 	{
 		id: 3,
@@ -29,7 +32,7 @@ export const experienceData = {
 		position: "Research Engineer",
 		period: "2017 - 2018",
 		description: ["Development of car’s steering system and Gear System optimization."],
-		logo: Image2
+		logo: WorkImg2
 	},
 	{
 		id: 4,
@@ -37,7 +40,7 @@ export const experienceData = {
 		position: "Internship",
 		period: "2014 - 2014",
 		description: ["Internship with drawings tools."],
-		logo: Image3
+		logo: WorkImg3
 	},
 	{
 		id: 5,
@@ -45,7 +48,7 @@ export const experienceData = {
 		position: "Internship",
 		period: "2013 - 2013",
 		description: ["Internship with drawings tools."],
-		logo: Image4
+		logo: WorkImg4
 	}
 	],
 	teaching : [
@@ -55,6 +58,7 @@ export const experienceData = {
       institution: "Samsung internal lecture",
       period: "2024 - present",
       description: "Delivered practical training on ETL processes tailored to corporate environments.",
+	  logo: TeachingImg1
 	},
     {
       id: 2,
@@ -62,6 +66,7 @@ export const experienceData = {
       institution: "Samsung internal lecture",
       period: "2024 - present",
       description: "Conducted training on data analysis methods applied to semiconductor manufacturing data.",
+	  logo: TeachingImg2
     },
 	{
       id: 3,
@@ -69,6 +74,7 @@ export const experienceData = {
       institution: "Samsung internal lecture",
       period: "2024 - present",
       description: "Led training and hands-on workshops on building and utilizing Spotfire dashboards.",
+	  logo: TeachingImg3
     },
 	],
 	publications : [

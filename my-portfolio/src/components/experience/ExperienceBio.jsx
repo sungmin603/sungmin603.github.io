@@ -20,11 +20,13 @@ export default function ExperienceBio() {
               {/* 회사 로고 */}
               <div className="w-full sm:w-1/4 mb-7 sm:mb-0 flex justify-center sm:justify-start">
                 {item.logo && (
-                  <img
-                    src={item.logo}
-                    alt={item.company}
-                    className="rounded-lg w-full sm:w-64 md:w-80 lg:w-96 h-auto object-contain"
-                  />
+                  <div className="w-full sm:w-48 md:w-56 lg:w-64 h-32 sm:h-36 md:h-40 lg:h-48">
+                    <img
+                      src={item.logo}
+                      alt={item.company}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 )}
               </div>
 
@@ -58,11 +60,13 @@ export default function ExperienceBio() {
             >
               <div className="w-full sm:w-1/4 mb-7 sm:mb-0 flex justify-center sm:justify-start">
                 {item.logo && (
-                  <img
-                    src={item.logo}
-                    alt={item.institution}
-                    className="rounded-lg w-full sm:w-64 md:w-80 lg:w-96 h-auto object-contain"
-                  />
+                  <div className="w-full sm:w-48 md:w-56 lg:w-64 h-32 sm:h-36 md:h-40 lg:h-48">
+                    <img
+                      src={item.logo}
+                      alt={item.institution}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 )}
               </div>
               <div className="w-full sm:w-3/4 text-left">
