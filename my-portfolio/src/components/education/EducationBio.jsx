@@ -50,7 +50,7 @@ const EducationBio = () => {
                   {item.period}
                 </p>
                 {item.bio && (
-                  <p className="mt-2 text-ternary-dark dark:text-ternary-light">
+                  <p className="text-lg  text-ternary-dark dark:text-ternary-light">
                     {item.bio}
                   </p>
                 )}
