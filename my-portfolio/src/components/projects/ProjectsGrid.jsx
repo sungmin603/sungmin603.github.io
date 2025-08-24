@@ -55,7 +55,7 @@ const ProjectsGrid = () => {
                       {project.description.map((cat, idx) => (
                         <div
                           key={idx}
-                          className="inline-block bg-blue-100 dark:bg-blue-700 text-blue-800 dark:text-blue-100 text-xs font-medium px-2 py-1 rounded-full"
+                          className="bg-blue-100 dark:bg-blue-700 text-blue-800 dark:text-blue-100 text-xs font-medium px-2 py-1 rounded-full"
                         >
                           {cat}
                         </div>
@@ -108,39 +108,30 @@ const ProjectsGrid = () => {
                   {project.role.map((cat, idx) => (
                     <span
                       key={idx}
-                      className="inline-block border border-gray-400 dark:border-gray-600 px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-200 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                    >
+                      className="inline-block border border-gray-400 dark:border-gray-600 px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-200 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                       {cat}
                     </span>
                   ))}
                 </div>
                 {/* 카테고리 태그 */}
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {project.category.map((cat, idx) => {
-                    const colorClass = tagColors[idx % tagColors.length]; // 색상 순환
-                    return (
-                      <span
-                        key={idx}
-                        className={`inline-block px-3 py-1 rounded-full border border-gray-300 dark:border-gray-600 font-medium text-xs shadow-sm hover:shadow-md transition ${colorClass}`}
-                      >
-                        #{cat}
-                      </span>
-                    );
-                  })}
+                <div className="inline-block mt-3 flex flex-wrap gap-2">
+                  {project.category.map((cat, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 text-sm font-medium rounded-md bg-blue-900/30 text-blue-300 dark:bg-blue-300/10 dark:text-blue-200 border border-blue-700/50">
+                      {cat}
+                    </span>
+                  ))}
                 </div>
                 {/* 테크 태그 */}
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {project.tech.map((cat, idx) => {
-                    const colorClass = tagColors[idx % tagColors.length]; // 색상 순환
-                    return (
-                      <span
-                        key={idx}
-                        className={`inline-block px-3 py-1 rounded-full border border-gray-300 dark:border-gray-600 font-medium text-xs shadow-sm hover:shadow-md transition ${colorClass}`}
-                      >
-                        #{cat}
-                      </span>
-                    );
-                  })}
+                <div className="inline-block mt-3 flex flex-wrap gap-2">
+                  {project.tech.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 text-sm font-medium rounded-md bg-emerald-900/30 text-emerald-300 dark:bg-emerald-300/10 dark:text-emerald-200 border border-emerald-700/50" >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
                 {/* 설명 태그 */}
                 <p className="text-xs text-gray-600 dark:text-gray-400 gap-1 line-clamp-1">

@@ -22,7 +22,6 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
-		"postbuild": "cp build/index.html build/404.html && node scripts/addRedirect.js",
 		"predeploy": "yarn build",
 		"deploy": "gh-pages -d build",
 		"test": "react-scripts test",
