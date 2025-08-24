@@ -17,7 +17,7 @@ export const educationData = [
 	},
 	{
 		id: 3,
-		type: "high school",
+		type: "High school",
 		school: "Daegu science high school",
 		period: "2006 - 2008",
 	},

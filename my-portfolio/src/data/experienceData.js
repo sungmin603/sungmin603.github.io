@@ -15,7 +15,11 @@ export const experienceData = {
 		company: "Samsung Electronics",
 		position: "Staff Engineer(Full-stack Engineer, ML Engineer)",
 		period: "2022 - present",
-		description: ["Development of AI projects, webpage, api, server, DB and visualization dashboard in R&D center."],
+		description: [
+			"- Development of AI projects with LLMs, RAG, and AI-based image processing.",
+			"- Development of data analytics with data pipeline, RCA, and dashaboard.",
+			"- Development of Full-stack web, and tooling infrastructure.",
+		],
 		logo: WorkImg1
 	},
 	{
@@ -23,7 +27,11 @@ export const experienceData = {
 		company: "Samsung Electronics",
 		position: "Engineer(Data Scientist)",
 		period: "2018 - 2021",
-		description: ["Root-cause Analysis in DRAM(D1z, D1a, D1b, D1c) and developing auto analysis solution."],
+		description: [
+			"- Root cause Analysis in DRAM(D1z, D1a, D1b, D1c) and developing auto analysis solution.",
+			"- Abnormal detection with measurement and inspection.",
+			"- Managed, tracked and predicted main lots' manufacuturing quality state.",
+		],
 		logo: WorkImg1
 	},
 	{
@@ -31,7 +39,10 @@ export const experienceData = {
 		company: "Hyundai Mobis",
 		position: "Research Engineer",
 		period: "2017 - 2018",
-		description: ["Development of car’s steering system and Gear System optimization."],
+		description: [
+			"- Development of car’s steering system.",
+			"- Gear system optimization.",
+		],
 		logo: WorkImg2
 	},
 	{
@@ -39,7 +50,9 @@ export const experienceData = {
 		company: "Hyundai Mipo",
 		position: "Internship",
 		period: "2014 - 2014",
-		description: ["Internship with drawings tools."],
+		description: [
+			"- Internship with drawings tools."
+		],
 		logo: WorkImg3
 	},
 	{
@@ -47,7 +60,9 @@ export const experienceData = {
 		company: "Hyundai Mipo",
 		position: "Internship",
 		period: "2013 - 2013",
-		description: ["Internship with drawings tools."],
+		description: [
+			"- Internship with drawings tools."
+		],
 		logo: WorkImg4
 	}
 	],
@@ -57,7 +72,7 @@ export const experienceData = {
       course: "Practical ETL Course",
       institution: "Samsung internal lecture",
       period: "2024 - present",
-      description: "Delivered practical training on ETL processes tailored to corporate environments.",
+      description: "- Delivered practical training on ETL processes tailored to corporate environments.",
 	  logo: TeachingImg1
 	},
     {
@@ -65,7 +80,7 @@ export const experienceData = {
       course: "Fundamentals of Data Analysis",
       institution: "Samsung internal lecture",
       period: "2024 - present",
-      description: "Conducted training on data analysis methods applied to semiconductor manufacturing data.",
+      description: "- Conducted training on data analysis methods applied to semiconductor manufacturing data.",
 	  logo: TeachingImg2
     },
 	{
@@ -73,7 +88,7 @@ export const experienceData = {
 	  course: "Spotfire Workshop",
       institution: "Samsung internal lecture",
       period: "2024 - present",
-      description: "Led training and hands-on workshops on building and utilizing Spotfire dashboards.",
+      description: "- Led training and hands-on workshops on building and utilizing Spotfire dashboards.",
 	  logo: TeachingImg3
     },
 	],

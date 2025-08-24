@@ -26,7 +26,7 @@ const EducationBio = () => {
               <div className="absolute -left-[7px] w-4 h-4 bg-blue-500 rounded-full border-2 border-white dark:border-gray-800"></div>
 
               {/* 카드 */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-2">
                 <span
                   className={`inline-block px-3 py-1 text-sm font-medium rounded-full mb-2
                     ${

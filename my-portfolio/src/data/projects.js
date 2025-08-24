@@ -16,9 +16,9 @@ export const projectsData = [
 		category: ["AI"],
 		tech: ["Python, LangGraph, Qdrant, FastAPI, Docker, Mendix"],
 		description: [
-			"LLM Services",
-			"RAG Pipelines",
-			"Computer Vision"
+			"- LLM Services",
+			"- RAG Pipelines",
+			"- Computer Vision"
 		],
 		img: proj1,
 		isFeatured: true,
@@ -29,9 +29,9 @@ export const projectsData = [
 		category: ["AI"],
 		tech: ["Python, Image processing, LLM, Vue, OpenCV"],
 		description: [
-			"Data Pipelines",
-			"Analytics & Root Cause Analysis",
-			"Data Visualization & Dashboards"
+			"- Data Pipelines",
+			"- Analytics & Root Cause Analysis",
+			"- Data Visualization & Dashboards"
 		],
 		img: proj3,
 		// link: "https://github.com/yourname/dl-image",
@@ -43,9 +43,9 @@ export const projectsData = [
 		category: ["AI"],
 		tech: ["Python, Airflow, MongoDB, Mysql, FastAPI, Docker, Mendix"],
 		description: [
-			"Full-Stack Web Development",
-			"Backend Systems (API & Databases)",
-			"Infrastructure & Operations (Setup & Tooling)"
+			"- Full-Stack Web Development",
+			"- Backend Systems (API & Databases)",
+			"- Infrastructure & Operations (Setup & Tooling)"
 		],
 		img: proj4,
 		isFeatured: true,
@@ -58,9 +58,9 @@ export const projectsData = [
 		category: ["AI & Machine Learning","Web Development & Infrastructure"],
 		tech : ["LLM","Langgraph","Qdrant","Postgres","FastAPI","Docker","Mendix"],
 		description : [
-			"Developed a web platform for searching, browsing, and registering user-submitted code (SQL queries, Python scripts) in a closed network environment",
-			"Implemented Modular RAG to enable natural language search and retrieval augmentation",
-			"Led the project end-to-end, including overall planning, and execution"
+			"- Developed a web platform for searching and registering SQL/Python code",
+			"- Implemented Modular RAG for natural language search",
+			"- Led the project end-to-end"
 		],
 		// img: WebImage2,
 		// ProjectHeader: {
@@ -77,9 +77,9 @@ export const projectsData = [
 		category: ["AI & Machine Learning","Web Development & Infrastructure"],
 		tech : ["LLM","Langgraph","Qdrant","MySQL","FastAPI","Docker","Vue"],
 		description : [
-			"Developed a web platform for searching, browsing, and registering production defect report presentations (PPT files)",
-			"Implemented Modular RAG to enable natural language search and retrieval augmentation",
-			"Led the project end-to-end, including overall planning, and execution"
+			"- Developed a web platform for searching, and browsing defect report PPT files",
+			"- Implemented Modular RAG for natural language search",
+			"- Led the project end-to-end"
 		],
 		// img: MobileImage1,
 	},
@@ -91,9 +91,9 @@ export const projectsData = [
 		category: ["Web Development & Infrastructure"],
 		tech : ["Impala","MySQL","FastAPI","Docker","Mendix"],
 		description : [
-			"Consolidated key views from the enterprise legacy systems into a single integrated web UI",
-			"Designed and implemented a backend integrating external APIs, image data, and ETL pipelines",
-			"Led the project end-to-end, and cross-departmental collaboration"
+			"- Integrated legacy system views into a unified web UI",
+			"- Developed backend with APIs, image data, and ETL pipelines",
+			"- Led project and cross-departmental collaboration"
 		],
 	},
 	{
@@ -104,9 +104,9 @@ export const projectsData = [
 		category: ["AI & Machine Learning","Web Development & Infrastructure"],
 		tech : ["LLM","Pytorch","MySQL","FastAPI","Docker","Vue"],
 		description : [
-			"Built a platform supporting user-driven image processing using both AI and traditional image processing techniques",
-			"Developed AI-based image processing features including segmentation, denoising, and similar image retrieval",
-			"Set up and optimized GPU environments for AI model implementation"
+			"- Built a platform for AI and traditional image processing",
+			"- Developed AI-based segmentation, denoising, and similar image retrieval",
+			"- Set up and optimized GPU environments for AI models"
 		],
 	},
 	{
@@ -117,9 +117,9 @@ export const projectsData = [
 		category: ["Data Engineering & Analytics", "Web Development & Infrastructure"],
 		tech : ["MongoDB","MySQL","Airflow","FastAPI","Docker","Mendix"],
 		description : [
-			"Developed a web platform for automatic collection, storage, and retrieval of process recipe data",
-			"Designed and deployed data pipelines for seamless recipe data ingestion",
-			"Configured and maintained backend services and database systems"
+			"- Developed a system for process recipe data collection, storage, and retrieval",
+			"- Designed whole data pipelines and visualization",
+			"- Managed backend and database systems"
 		],
 		// img: WebImage1,
 	},
@@ -131,9 +131,9 @@ export const projectsData = [
 		category: ["Data Engineering & Analytics"],
 		tech : ["PaaS","Python","Stastics","Spotfire"],
 		description : [
-			"Created an in-house analytics tool to identify root causes of product defects in R&D center",
-			"Built data pipelines, applied analytical methods, and delivered results through visualization",
-			"Led the full project lifecycle independently - from planning and development to deployment, operation, and testing"
+			"- Created an in-house analytics tool to identify root causes of defects in R&D center",
+			"- Built data pipelines, applied analytical methods, and visualized results",
+			"- Led and developed the full project lifecycle independently"
 		],
 		// img: WebImage1,
 	},	
@@ -145,9 +145,9 @@ export const projectsData = [
 		category: ["Web Development & Infrastructure"],
 		tech : ["Python","Airflow","Mendix"],
 		description : [
-			"Built a web platform to centralize and share workforce information across the R&D center",
-			"Designed unified work schedule templates and implemented automated data pipelines",
-			"Led the project end-to-end, and cross-departmental collaboration"
+			"- Centralized workforce information into a web platform across the R&D center",
+			"- Standardized schedules and automated data pipelines",
+			"- Led project with cross-team collaboration"
 		],
 		// img: WebImage1,
 	},
@@ -159,9 +159,9 @@ export const projectsData = [
 		category: ["Data Engineering & Analytics"],
 		tech : ["Python","Airflow","Spotfire"],
 		description : [
-			"Tracked process histories of lots undergoing specialized bonding processes",
-			"Built data pipelines, applied analytical methods, and delivered results through visualization",
-			"Led the project end-to-end, including overall planning, and execution"
+			"- Tracked manufacturing histories of lots with bonding processes",
+			"- Built data pipelines, applied analytical methods, and visualized results",
+			"- Led the project end-to-end"
 		],
 		// img: WebImage1,
 	},
@@ -173,9 +173,9 @@ export const projectsData = [
 		category: ["Data Engineering & Analytics"],
 		tech : ["Python","Airflow","Spotfire"],
 		description : [
-			"Managed and monitored evaluation lots assigned to the department, including full process history tracking",
-			"Built data pipelines, applied analytical methods, and delivered results through visualization",
-			"Led the project end-to-end, including overall planning, and execution"
+			"- Managed and monitored evaluation lots assigned to the department, including manufacturing history",
+			"- Built data pipelines, applied analytical methods, and visualized results",
+			"- Led the project end-to-end"
 		],
 		// img: WebImage1,
 	},
@@ -187,8 +187,8 @@ export const projectsData = [
 		category: ["Data Engineering & Analytics", "Web Development & Infrastructure"],
 		tech : ["MySQL","Spotfire"],
 		description : [
-			"Built data pipelines, applied analytical methods, and delivered results through visualization",
-			"Led the project end-to-end, and cross-departmental collaboration"
+			"- Built monitoring system with data pipelines, visualized dashboard",
+			"- Led project with cross-team collaboration"
 		],
 		// img: WebImage1,
 	},
@@ -200,7 +200,7 @@ export const projectsData = [
 		category: ["Web Development & Infrastructure"],
 		tech : ["MySQL","Mendix"],
 		description : [
-			"Built department-specific web interfaces to support internal workflows",
+			"- Built department-specific web pages for workflows",
 		],
 		// img: WebImage1,
 	},
@@ -212,8 +212,8 @@ export const projectsData = [
 		category: ["Web Development & Infrastructure"],
 		tech : ["MySQL","Mendix"],
 		description : [
-			"Systematized inter-departmental task requests, coordination, and execution processes for efficient management",
-			"Led the project end-to-end, and cross-departmental collaboration"
+			"- Systematized inter-departmental task requests, coordination, and execution processes",
+			"- Led project with cross-team collaboration"
 		],
 		// img: WebImage1,
 	},

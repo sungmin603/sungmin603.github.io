@@ -292,7 +292,7 @@ ol,
 ul,
 menu {
   list-style: none;
-  margin: 0;
+  margin: 1;
   padding: 0;
 }
 
@@ -358,11 +358,26 @@ video {
   max-width: 100%;
   height: auto;
 }
+
+
 .fixed-card-image {
   width: 100%;
   height: 16rem; /* Tailwind h-64 대응 */
   object-fit: cover; /* 영역을 꽉 채우면서 비율 유지 */
 }
+/* .pill-category1 {
+  @apply px-3 py-1 text-sm font-medium rounded-full 
+         bg-blue-900/30 text-blue-300 
+         dark:bg-blue-300/10 dark:text-blue-200 
+         border border-blue-700/50;
+}
+.pill-category2 {
+  @apply px-3 py-1 text-sm font-medium rounded-full 
+         bg-emerald-900/30 text-emerald-300 
+         dark:bg-emerald-300/10 dark:text-emerald-200 
+         border border-emerald-700/50;
+} */
+
 
 /*
 Ensure the default browser behavior of the `hidden` attribute.

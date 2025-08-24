@@ -11,11 +11,11 @@ export default function ExperienceBio() {
         <h3 className="text-2xl font-bold mb-6 text-ternary-dark dark:text-ternary-light">
           Work Experience
         </h3>
-        <div className="space-y-12">
+        <div className="space-y-8">
           {work.map((item) => (
             <div
               key={item.id}
-              className="block sm:flex sm:gap-10 p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
+              className="block sm:flex sm:gap-10 p-4 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm"
             >
               {/* 회사 로고 */}
               <div className="w-full sm:w-1/4 mb-7 sm:mb-0 flex justify-center sm:justify-start">
@@ -38,9 +38,14 @@ export default function ExperienceBio() {
                 <p className="mt-2 text-ternary-dark dark:text-ternary-light">
                   ({item.period}): {item.position} 
                 </p>
-                <p className="mt-2 text-ternary-dark dark:text-ternary-light">
+                <div className="mt-2 space-y-1 text-ternary-dark dark:text-ternary-light">
+                  {item.description.map((desc, idx) => (
+                    <p key={idx}>{desc}</p>
+                  ))}
+                </div>
+                {/* <p className="mt-2 text-ternary-dark dark:text-ternary-light">
                   {item.description}
-                </p>
+                </p> */}
               </div>
             </div>
           ))}

@@ -51,7 +51,7 @@ const ProjectsGrid = () => {
                     {project.title}
                   </h3>
                   <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-1">
-                    <div className="mt-2 flex flex-wrap gap-2">
+                    <div className="text-xs text-gray-600 dark:text-gray-400 gap-1 line-clamp-1">
                       {project.description.map((cat, idx) => (
                         <div
                           key={idx}
@@ -100,7 +100,7 @@ const ProjectsGrid = () => {
               /> */}
               {/* 텍스트 */}
               <div>
-                <h3 className="text-base font-semibold text-ternary-dark dark:text-ternary-light">
+                <h3 className="text-lg font-semibold text-ternary-dark dark:text-ternary-light mb-2">
                   ({project.period}) {project.title}
                 </h3>
                 {/* 롤 태그 */}
@@ -108,7 +108,7 @@ const ProjectsGrid = () => {
                   {project.role.map((cat, idx) => (
                     <span
                       key={idx}
-                      className="inline-block border border-gray-400 dark:border-gray-600 px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-200 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                      className="inline-block border border-gray-400 dark:border-gray-600 px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-200 rounded-full hover:bg-gray-700 dark:hover:bg-gray-100 transition">
                       {cat}
                     </span>
                   ))}
@@ -118,7 +118,7 @@ const ProjectsGrid = () => {
                   {project.category.map((cat, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 text-sm font-medium rounded-md bg-blue-900/30 text-blue-300 dark:bg-blue-300/10 dark:text-blue-200 border border-blue-700/50">
+                      className="px-3 py-1 text-sm font-medium rounded-full bg-blue-900/30 text-blue-300 dark:bg-blue-300/10 dark:text-blue-200 border border-blue-700/50 !rounded-full hover:bg-gray-700 dark:hover:bg-gray-100 transition !px-3 !py-1">
                       {cat}
                     </span>
                   ))}
@@ -128,7 +128,7 @@ const ProjectsGrid = () => {
                   {project.tech.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 text-sm font-medium rounded-md bg-emerald-900/30 text-emerald-300 dark:bg-emerald-300/10 dark:text-emerald-200 border border-emerald-700/50" >
+                      className="px-3 py-1 text-sm font-medium rounded-full bg-emerald-900/30 text-emerald-300 dark:bg-emerald-300/10 dark:text-emerald-200 border border-emerald-700/50 !rounded-full hover:bg-gray-700 dark:hover:bg-gray-100 transition !px-3 !py-1" >
                       {tech}
                     </span>
                   ))}
