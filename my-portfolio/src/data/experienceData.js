@@ -17,7 +17,7 @@ export const experienceData = {
 		period: "2022 - present",
 		description: [
 			"- Development of AI projects with LLMs, RAG, and AI-based image processing.",
-			"- Development of data analytics with data pipeline, RCA, and dashaboard.",
+			"- Development of data analytics with data pipeline, RCA, and dashboard.",
 			"- Development of Full-stack web, and tooling infrastructure.",
 		],
 		logo: WorkImg1

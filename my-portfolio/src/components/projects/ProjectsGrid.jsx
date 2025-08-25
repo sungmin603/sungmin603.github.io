@@ -108,7 +108,7 @@ const ProjectsGrid = () => {
                   {project.category.map((cat, idx) => (
                     <span
                       key={idx}
-                      className="pill-sky"
+                      className="flex-shrink-0 pill-sky"
                     >
                       {cat}
                     </span>
@@ -119,7 +119,7 @@ const ProjectsGrid = () => {
                   {project.tech.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="pill-green"
+                      className="flex-shrink-0 pill-green"
                     >
                       {tech}
                     </span>
