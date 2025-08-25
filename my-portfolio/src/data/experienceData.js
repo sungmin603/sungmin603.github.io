@@ -57,7 +57,7 @@ export const experienceData = {
 	},
 	{
 		id: 5,
-		company: "Hyundai Mipo",
+		company: "Samsung Heavy Industry",
 		position: "Internship",
 		period: "2013 - 2013",
 		description: [

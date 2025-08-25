@@ -87,10 +87,10 @@ const ProjectsGrid = () => {
           Project details
         </h2>
         <ul className="space-y-4">
-          {otherProjects.map((project) => (
+          {otherProjects.map((project,ix) => (
             <li
               key={project.id}
-              className="flex items-center space-x-4 p-3 border rounded-lg shadow-sm hover:shadow-md transition bg-white dark:bg-gray-800"
+              className={`flex items-center space-x-4 p-3 border rounded-lg shadow-sm hover:shadow-md transition bg-white dark:bg-gray-800 ${ix !== project.length - 1 ? "mb-2" : ""}`}
             >
               {/* 작은 썸네일 */}
               {/* <img
@@ -103,33 +103,35 @@ const ProjectsGrid = () => {
                 <h3 className="text-lg font-semibold text-ternary-dark dark:text-ternary-light mb-2">
                   ({project.period}) {project.title}
                 </h3>
-                {/* 롤 태그 */}
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {project.role.map((cat, idx) => (
-                    <span
-                      key={idx}
-                      className="inline-block border border-gray-400 dark:border-gray-600 px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-200 rounded-full hover:bg-gray-700 dark:hover:bg-gray-100 transition">
-                      {cat}
-                    </span>
-                  ))}
-                </div>
                 {/* 카테고리 태그 */}
-                <div className="inline-block mt-3 flex flex-wrap gap-2">
+                <div className="mt-3 flex flex-wrap gap-2">
                   {project.category.map((cat, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 text-sm font-medium rounded-full bg-blue-900/30 text-blue-300 dark:bg-blue-300/10 dark:text-blue-200 border border-blue-700/50 !rounded-full hover:bg-gray-700 dark:hover:bg-gray-100 transition !px-3 !py-1">
+                      className="pill-sky"
+                    >
                       {cat}
                     </span>
                   ))}
                 </div>
                 {/* 테크 태그 */}
-                <div className="inline-block mt-3 flex flex-wrap gap-2">
+                <div className="mt-3 flex flex-wrap gap-2">
                   {project.tech.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 text-sm font-medium rounded-full bg-emerald-900/30 text-emerald-300 dark:bg-emerald-300/10 dark:text-emerald-200 border border-emerald-700/50 !rounded-full hover:bg-gray-700 dark:hover:bg-gray-100 transition !px-3 !py-1" >
+                      className="pill-green"
+                    >
                       {tech}
+                    </span>
+                  ))}
+                </div>
+                {/* 롤 태그 */}
+                <div className="text-xs text-gray-600 dark:text-gray-400 gap-1 line-clamp-1">
+                  {project.role.map((cat, idx) => (
+                    <span
+                      key={idx}
+                      className="mt-2 text-ternary-dark dark:text-ternary-light">
+                      {cat}{idx < project.role.length - 1 ? ', ' : ''}
                     </span>
                   ))}
                 </div>

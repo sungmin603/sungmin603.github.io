@@ -9,7 +9,7 @@
 
   // Codespace가 시작된 후 자동으로 실행할 명령어를 정의합니다.
   // 이 명령어가 npm install을 자동으로 실행하여 패키지를 설치해 줍니다.
-  "postCreateCommand": "cd my-portfolio && npm install && npm install --global yarn",
+  "postCreateCommand": "cd my-portfolio && npm install && npm install --global yarn && yarn global add serve",
 
   // Codespace에 미리 설치할 VS Code 확장 프로그램을 지정합니다.
   // 이 확장 프로그램들은 개발 편의성을 높여줍니다.

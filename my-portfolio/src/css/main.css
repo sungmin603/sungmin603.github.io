@@ -5,6 +5,58 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+/* main.css */
+
+/* 기존 하늘색 pill */
+.pill-sky {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  vertical-align: middle;
+  background-color: #bfdbfe; /* 연한 하늘색 */
+  color: #1e3a8a;           /* 진한 파랑 */
+}
+
+/* 하늘색 pill 다크모드 */
+@media (prefers-color-scheme: dark) {
+  .pill-sky {
+    background-color: #1e40af;
+    color: #bfdbfe;
+  }
+}
+
+/* 새로운 연두색 pill */
+.pill-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  vertical-align: middle;
+  background-color: #d9f99d; /* 연한 연두색 */
+  color: #166534;           /* 진한 초록 */
+}
+
+/* 연두색 pill 다크모드 */
+@media (prefers-color-scheme: dark) {
+  .pill-green {
+    background-color: #166534; /* 진한 초록 */
+    color: #d9f99d;           /* 연한 연두색 */
+  }
+}
+
 *,
 ::before,
 ::after {
