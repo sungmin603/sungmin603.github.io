@@ -669,6 +669,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-h-screen {
   max-height: 100vh;
 }
+.w-logo {
+  width: 20rem;
+}
 .w-full {
   width: 100%;
 }
