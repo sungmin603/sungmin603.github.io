@@ -95,6 +95,13 @@ export const experienceData = {
 	publications : [
 	{
       id: 1,
+      title: "나홀로 명도소소을 위한 가이드북",
+      type: "Book",
+      publisher: "Puple",
+      year: 2025,
+    },
+	{
+      id: 2,
       title: "Spotfire 간단히 그래프 그리기",
       type: "Book",
       publisher: "Puple",
@@ -104,12 +111,18 @@ export const experienceData = {
 	awards: [
     {
       id: 1,
+      title: "2025 AI BP Festival",
+      organization: "Samsung Electronics AI Center",
+      year: 2025,
+    },
+	{
+      id: 2,
       title: "2024 SRD e-Technology Journal",
       organization: "Samsung Electronics CTO",
       year: 2024,
     },
     {
-      id: 2,
+      id: 3,
       title: "2023 The Innovator",
       organization: "Samsung Electronics CTO",
       year: 2023,
