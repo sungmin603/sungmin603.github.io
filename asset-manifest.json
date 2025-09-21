@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.e7d9f6ce.chunk.css",
-    "main.js": "/static/js/main.bf08064b.chunk.js",
-    "main.js.map": "/static/js/main.bf08064b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6372e09f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6372e09f.js.map",
+    "main.js": "/static/js/main.04304587.chunk.js",
+    "main.js.map": "/static/js/main.04304587.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a455d448.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a455d448.js.map",
     "static/js/2.d397859a.chunk.js": "/static/js/2.d397859a.chunk.js",
     "static/js/2.d397859a.chunk.js.map": "/static/js/2.d397859a.chunk.js.map",
-    "static/js/3.22c4c464.chunk.js": "/static/js/3.22c4c464.chunk.js",
-    "static/js/3.22c4c464.chunk.js.map": "/static/js/3.22c4c464.chunk.js.map",
+    "static/js/3.7b9da391.chunk.js": "/static/js/3.7b9da391.chunk.js",
+    "static/js/3.7b9da391.chunk.js.map": "/static/js/3.7b9da391.chunk.js.map",
     "static/js/4.6061d0f6.chunk.js": "/static/js/4.6061d0f6.chunk.js",
     "static/js/4.6061d0f6.chunk.js.map": "/static/js/4.6061d0f6.chunk.js.map",
     "static/js/5.00d6f02a.chunk.js": "/static/js/5.00d6f02a.chunk.js",
@@ -17,8 +17,8 @@
     "static/js/6.84a927bb.chunk.js.map": "/static/js/6.84a927bb.chunk.js.map",
     "static/js/7.24b10ac5.chunk.js": "/static/js/7.24b10ac5.chunk.js",
     "static/js/7.24b10ac5.chunk.js.map": "/static/js/7.24b10ac5.chunk.js.map",
-    "static/js/8.284e76f3.chunk.js": "/static/js/8.284e76f3.chunk.js",
-    "static/js/8.284e76f3.chunk.js.map": "/static/js/8.284e76f3.chunk.js.map",
+    "static/js/8.3451caca.chunk.js": "/static/js/8.3451caca.chunk.js",
+    "static/js/8.3451caca.chunk.js.map": "/static/js/8.3451caca.chunk.js.map",
     "static/js/9.d30b73e2.chunk.js": "/static/js/9.d30b73e2.chunk.js",
     "static/js/9.d30b73e2.chunk.js.map": "/static/js/9.d30b73e2.chunk.js.map",
     "static/js/10.3900f32c.chunk.js": "/static/js/10.3900f32c.chunk.js",
@@ -52,9 +52,9 @@
     "static/media/web-project-2.f0108702.jpg": "/static/media/web-project-2.f0108702.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6372e09f.js",
+    "static/js/runtime-main.a455d448.js",
     "static/js/2.d397859a.chunk.js",
     "static/css/main.e7d9f6ce.chunk.css",
-    "static/js/main.bf08064b.chunk.js"
+    "static/js/main.04304587.chunk.js"
   ]
 }
