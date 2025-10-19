@@ -182,7 +182,7 @@ export const projectsData = [
 	{
 		id: 13,
 		title: 'MI/TEM Index Monitoring System',
-		period: '2023 - 2024',
+		period: '2022 - 2024',
 		role: ["Project Lead","Main Developer"],
 		category: ["Data Engineering & Analytics", "Web Development & Infrastructure"],
 		tech : ["MySQL","Spotfire"],
