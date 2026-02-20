@@ -1,21 +1,60 @@
 import { useContext } from 'react';
-import ProjectSingle from './ProjectSingle';
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
 import { ProjectsContext } from '../../context/ProjectsContext';
-import { tagColors } from '../shared/colors';
+
+/* 프로젝트 카드 공통 내용 */
+const ProjectCardContent = ({ project, isMain }) => (
+	<>
+		<p className={isMain ? 'main-project-title' : 'other-project-title'}>
+			{project.period && (
+				<span className={isMain ? 'main-project-period' : 'other-project-period'}>
+					({project.period})
+				</span>
+			)}
+			{project.title}
+		</p>
+
+		<div className={isMain ? 'main-project-tags' : 'other-project-tags'}>
+			{project.category.map((cat, idx) => (
+				<span key={idx} className="pill-sky">{cat}</span>
+			))}
+			{project.tech.map((tech, idx) => (
+				<span key={idx} className="pill-green">{tech}</span>
+			))}
+		</div>
+
+		{project.role && (
+			<div className={isMain ? 'main-project-role' : 'other-project-role'}>
+				{project.role.join(', ')}
+			</div>
+		)}
+
+		<div className={isMain ? 'main-project-desc' : 'other-project-desc'}>
+			{project.description.map((desc, idx) => (
+				<div key={idx} className={isMain ? 'main-project-desc-item' : 'other-project-desc-item'}>
+					{desc}
+				</div>
+			))}
+		</div>
+	</>
+);
 
 const ProjectsGrid = ({ limit }) => {
 	const { projects } = useContext(ProjectsContext);
 
 	const featuredProjects = projects.filter((p) => p.isFeatured);
-	const otherProjects = projects.filter((p) => !p.isFeatured);
+	const mainProjects     = projects.filter((p) => p.isMain);
+	const otherProjects    = projects.filter((p) => !p.isFeatured && !p.isMain);
 
-	// limit 적용
 	const displayedFeatured = limit ? featuredProjects.slice(0, limit) : featuredProjects;
-	const displayedOther = limit ? otherProjects.slice(0, limit) : otherProjects;
+	const displayedMain     = limit ? mainProjects.slice(0, limit)     : mainProjects;
+	const displayedOther    = limit ? otherProjects.slice(0, limit)    : otherProjects;
 
 	return (
 		<section className="py-5 sm:py-10 mt-5 sm:mt-10">
-			{/* Project Categories → 카드(Grid) */}
+
+			{/* ── Project Categories ── */}
 			<div className="mt-16 max-w-4xl mx-auto">
 				<h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-primary-dark dark:text-primary-light">
 					Project Categories
@@ -26,7 +65,6 @@ const ProjectsGrid = ({ limit }) => {
 							key={project.id}
 							className="flex flex-col border border-gray-200 dark:border-gray-700 rounded-lg shadow-md overflow-hidden h-96 bg-white dark:bg-gray-800"
 						>
-							{/* 이미지 영역 */}
 							<div className="w-full h-40 bg-gray-100 flex items-center justify-center">
 								{project.img && (
 									<img
@@ -36,82 +74,62 @@ const ProjectsGrid = ({ limit }) => {
 									/>
 								)}
 							</div>
-
-							{/* 텍스트 영역 */}
 							<div className="flex flex-col justify-between flex-1 p-4">
 								<h3 className="text-lg font-semibold text-ternary-dark dark:text-ternary-light mb-2">
 									{project.title}
 								</h3>
-								<p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-1">
-									<div className="text-xs text-gray-600 dark:text-gray-400 gap-1 line-clamp-1">
-										{project.description.map((cat, idx) => (
-											<div
-												key={idx}
-												className="bg-blue-100 dark:bg-blue-700 text-blue-800 dark:text-blue-100 text-xs font-medium px-2 py-1 rounded-full"
-											>
-												{cat}
-											</div>
-										))}
-									</div>
-								</p>
+								<div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+									{project.description.map((desc, idx) => (
+										<div key={idx} className="text-sm text-gray-500">
+											{desc}
+										</div>
+									))}
+								</div>
 							</div>
 						</div>
 					))}
 				</div>
 			</div>
 
-			{/* Project details → 리스트(간단 UI) */}
-			<div className="mt-16 max-w-4xl mx-auto pt-10">
-				<h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-primary-dark dark:text-primary-light">
-					Project details
+			{/* ── Main Projects ── */}
+			<div className="mt-20 max-w-4xl mx-auto pt-10">
+				<h2 className="text-xl sm:text-2xl font-semibold mb-2 text-left text-primary-dark dark:text-primary-light">
+					Main Projects
 				</h2>
-				<ul className="space-y-4">
-					{displayedOther.map((project, ix) => (
-						<li
-							key={project.id}
-							className={`flex items-center space-x-4 p-3 border rounded-lg shadow-sm hover:shadow-md transition bg-white dark:bg-gray-800 ${ix !== project.length - 1 ? 'mb-2' : ''}`}
-						>
-							<div>
-								<h3 className="text-lg font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-									({project.period}) {project.title}
-								</h3>
-								<div className="mt-3 flex flex-wrap gap-2">
-									{project.category.map((cat, idx) => (
-										<span key={idx} className="flex-shrink-0 pill-sky">
-											{cat}
-										</span>
-									))}
+				<p style={{ fontSize: '0.875rem', color: '#9ca3af', marginBottom: '1.5rem' }}>
+					클릭하면 상세 내용을 볼 수 있습니다.
+				</p>
+				<ul className="main-project-list">
+					{displayedMain.map((project) => (
+						<li key={project.id}>
+							<Link to={`/projects/${project.id}`} className="main-project-link">
+								<div className="main-project-content">
+									<ProjectCardContent project={project} isMain={true} />
 								</div>
-								<div className="mt-3 flex flex-wrap gap-2">
-									{project.tech.map((tech, idx) => (
-										<span key={idx} className="flex-shrink-0 pill-green">
-											{tech}
-										</span>
-									))}
+								<div className="main-project-arrow">
+									<span className="main-project-arrow-text">자세히 보기</span>
+									<FiArrowRight className="main-project-arrow-icon" />
 								</div>
-								<div className="text-xs text-gray-600 dark:text-gray-400 gap-1 line-clamp-1">
-									{project.role.map((cat, idx) => (
-										<span key={idx} className="mt-2 text-ternary-dark dark:text-ternary-light">
-											{cat}
-											{idx < project.role.length - 1 ? ', ' : ''}
-										</span>
-									))}
-								</div>
-								<p className="text-xs text-gray-600 dark:text-gray-400 gap-1 line-clamp-1">
-									{project.description.map((cat, idx) => (
-										<div
-											key={idx}
-											className="inline-block bg-blue-100 dark:bg-blue-700 text-blue-800 dark:text-blue-100 text-xs font-medium px-2 py-1 rounded-full"
-										>
-											{cat}
-										</div>
-									))}
-								</p>
-							</div>
+							</Link>
 						</li>
 					))}
 				</ul>
 			</div>
+
+			{/* ── Other Projects ── */}
+			<div className="mt-16 max-w-4xl mx-auto pt-10">
+				<h2 className="text-xl sm:text-2xl font-semibold mb-6 text-left text-primary-dark dark:text-primary-light">
+					Other Projects
+				</h2>
+				<ul className="other-project-list">
+					{displayedOther.map((project) => (
+						<li key={project.id} className="other-project-card">
+							<ProjectCardContent project={project} isMain={false} />
+						</li>
+					))}
+				</ul>
+			</div>
+
 		</section>
 	);
 };

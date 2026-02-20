@@ -12,8 +12,10 @@ import proj5 from '../images/proj5.png';
 export const projectsData = [
 	{
 		id: 1,
+		isFeatured: true,
+		isMain: false,
 		title: "AI & Machine Learning",
-		category: ["AI"],
+		category: ["AI & ML"],
 		tech: ["Python, LangGraph, Qdrant, FastAPI, Docker, Mendix"],
 		description: [
 			"- LLM Services",
@@ -21,12 +23,13 @@ export const projectsData = [
 			"- Computer Vision"
 		],
 		img: proj1,
-		isFeatured: true,
 	},
 	{
 		id: 2,
+		isFeatured: true,
+		isMain: false,
 		title: "Data Engineering & Analytics",
-		category: ["AI"],
+		category: ["Data & Analytics"],
 		tech: ["Python, Image processing, LLM, Vue, OpenCV"],
 		description: [
 			"- Data Pipelines",
@@ -35,12 +38,13 @@ export const projectsData = [
 		],
 		img: proj3,
 		// link: "https://github.com/yourname/dl-image",
-		isFeatured: true,
 	},
 	{
 		id: 3,
+		isFeatured: true,
+		isMain: false,
 		title: "Web Development & Infrastructure",
-		category: ["AI"],
+		category: ["Web & Infra"],
 		tech: ["Python, Airflow, MongoDB, Mysql, FastAPI, Docker, Mendix"],
 		description: [
 			"- Full-Stack Web Development",
@@ -48,14 +52,61 @@ export const projectsData = [
 			"- Infrastructure & Operations (Setup & Tooling)"
 		],
 		img: proj4,
-		isFeatured: true,
 	},
 	{
 		id: 4,
+		isFeatured: false,
+		isMain: true,
+		title: 'CDSEM Anomaly Detection Interpreter',
+		period: '2026 - present',
+		role: ["Project Lead","Main Developer"],
+		category: ["AI & ML"],
+		tech : ["Python","k8S","Dinov3","image-processing","FastAPI","Postgres","minIO"],
+		description : [
+			"- Development of a scalable Image Anomaly Detection System for large-scale industrial environments",
+			"- Architected an image-based anomaly detection algorithm and implemented a scalable GPU inference infrastructure",
+			"- Led the project end-to-end"
+		],
+		// img: WebImage1,
+	},
+	{
+		id: 5,
+		isFeatured: false,
+		isMain: true,		
+		title: 'Data Analysis System',
+		period: '2018 - present',
+		role: ["Project Lead","Main Developer"],
+		category: ["Data & Analytics"],
+		tech : ["PaaS","Python","Stastics","Spotfire"],
+		description : [
+			"- Created an in-house analytics tool to identify root causes of defects in R&D center",
+			"- Built data pipelines, applied analytical methods, and visualized results",
+			"- Led and developed the full project lifecycle independently"
+		],
+		// img: WebImage1,
+	},
+	{
+		id: 6,
+		isFeatured: false,
+		isMain: true,
+		title: 'PPT Report Search Web Platform',
+		period: '2025 - present',
+		role: ["Project Lead","Main Developer"],
+		category: ["AI & ML","Web & Infra"],
+		tech : ["LLM","Langgraph","Qdrant","MySQL","FastAPI","Docker","Vue"],
+		description : [
+			"- Developed a web platform for searching, and browsing defect report PPT files",
+			"- Implemented Modular RAG for natural language search",
+			"- Led the project end-to-end"
+		],
+		// img: MobileImage1,
+	},	
+	{
+		id: 7,
 		title: 'Code Search Web Platform',
 		period: '2025 - present',
 		role: ["Project Lead","Main Developer"],
-		category: ["AI & Machine Learning","Web Development & Infrastructure"],
+		category: ["AI & ML","Web & Infra"],
 		tech : ["LLM","Langgraph","Qdrant","Postgres","FastAPI","Docker","Mendix"],
 		description : [
 			"- Developed a web platform for searching and registering SQL/Python code",
@@ -69,26 +120,13 @@ export const projectsData = [
 		// 	tags: 'UI / Frontend',
 		// },
 	},
+
 	{
-		id: 5,
-		title: 'PPT Report Search Web Platform',
-		period: '2025 - present',
-		role: ["Project Lead","Main Developer"],
-		category: ["AI & Machine Learning","Web Development & Infrastructure"],
-		tech : ["LLM","Langgraph","Qdrant","MySQL","FastAPI","Docker","Vue"],
-		description : [
-			"- Developed a web platform for searching, and browsing defect report PPT files",
-			"- Implemented Modular RAG for natural language search",
-			"- Led the project end-to-end"
-		],
-		// img: MobileImage1,
-	},
-	{
-		id: 6,
+		id: 8,
 		title: 'Total View Web Platform',
 		period: '2025 - present',
 		role: ["Project Lead","Main Developer"],
-		category: ["Web Development & Infrastructure"],
+		category: ["Web & Infra"],
 		tech : ["Impala","MySQL","FastAPI","Docker","Mendix"],
 		description : [
 			"- Integrated legacy system views into a unified web UI",
@@ -97,11 +135,11 @@ export const projectsData = [
 		],
 	},
 	{
-		id: 7,
+		id: 9,
 		title: 'Image Processing Web Platform',
 		period: '2024 - present',
 		role: ["Main Developer"],
-		category: ["AI & Machine Learning","Web Development & Infrastructure"],
+		category: ["AI & ML","Web & Infra"],
 		tech : ["LLM","Pytorch","MySQL","FastAPI","Docker","Vue"],
 		description : [
 			"- Built a platform for AI and traditional image processing",
@@ -110,11 +148,11 @@ export const projectsData = [
 		],
 	},
 	{
-		id: 8,
+		id: 10,
 		title: 'Recipe Database and Web Platform',
 		period: '2023 - present',
 		role: ["Main Developer"],
-		category: ["Data Engineering & Analytics", "Web Development & Infrastructure"],
+		category: ["Data & Analytics", "Web & Infra"],
 		tech : ["MongoDB","MySQL","Airflow","FastAPI","Docker","Mendix"],
 		description : [
 			"- Developed a system for process recipe data collection, storage, and retrieval",
@@ -123,26 +161,13 @@ export const projectsData = [
 		],
 		// img: WebImage1,
 	},
+
 	{
-		id: 9,
-		title: 'Data Analysis System',
-		period: '2018 - present',
-		role: ["Project Lead","Main Developer"],
-		category: ["Data Engineering & Analytics"],
-		tech : ["PaaS","Python","Stastics","Spotfire"],
-		description : [
-			"- Created an in-house analytics tool to identify root causes of defects in R&D center",
-			"- Built data pipelines, applied analytical methods, and visualized results",
-			"- Led and developed the full project lifecycle independently"
-		],
-		// img: WebImage1,
-	},	
-	{
-		id: 10,
+		id: 11,
 		title: 'Integrated Employee Information Sharing System',
 		period: '2024 - 2024',
 		role: ["Project Lead","Main Developer"],
-		category: ["Web Development & Infrastructure"],
+		category: ["Web & Infra"],
 		tech : ["Python","Airflow","Mendix"],
 		description : [
 			"- Centralized workforce information into a web platform across the R&D center",
@@ -152,11 +177,11 @@ export const projectsData = [
 		// img: WebImage1,
 	},
 	{
-		id: 11,
+		id: 12,
 		title: 'Bonding Process Tracking Dashboard',
 		period: '2024 - 2024',
 		role: ["Project Lead","Main Developer"],
-		category: ["Data Engineering & Analytics"],
+		category: ["Data & Analytics"],
 		tech : ["Python","Airflow","Spotfire"],
 		description : [
 			"- Tracked manufacturing histories of lots with bonding processes",
@@ -166,11 +191,11 @@ export const projectsData = [
 		// img: WebImage1,
 	},
 	{
-		id: 12,
+		id: 13,
 		title: 'Lot Monitoring Dashboard',
 		period: '2024 - 2024',
 		role: ["Project Lead","Main Developer"],
-		category: ["Data Engineering & Analytics"],
+		category: ["Data & Analytics"],
 		tech : ["Python","Airflow","Spotfire"],
 		description : [
 			"- Managed and monitored evaluation lots assigned to the department, including manufacturing history",
@@ -180,11 +205,11 @@ export const projectsData = [
 		// img: WebImage1,
 	},
 	{
-		id: 13,
+		id: 14,
 		title: 'MI/TEM Index Monitoring System',
-		period: '2022 - 2024',
+		period: '2022 - present',
 		role: ["Project Lead","Main Developer"],
-		category: ["Data Engineering & Analytics", "Web Development & Infrastructure"],
+		category: ["Data & Analytics", "Web & Infra"],
 		tech : ["MySQL","Spotfire"],
 		description : [
 			"- Built monitoring system with data pipelines, visualized dashboard",
@@ -193,11 +218,11 @@ export const projectsData = [
 		// img: WebImage1,
 	},
 	{
-		id: 14,
+		id: 15,
 		title: "Team's Webpage",
 		period: '2023 - 2023',
 		role: ["Project Lead","Main Developer"],
-		category: ["Web Development & Infrastructure"],
+		category: ["Web & Infra"],
 		tech : ["MySQL","Mendix"],
 		description : [
 			"- Built department-specific web pages for workflows",
@@ -205,11 +230,11 @@ export const projectsData = [
 		// img: WebImage1,
 	},
 	{
-		id: 18,
+		id: 16,
 		title: 'MI Request system',
 		period: '2023 - 2023',
 		role: ["Project Lead","Main Developer"],
-		category: ["Web Development & Infrastructure"],
+		category: ["Web & Infra"],
 		tech : ["MySQL","Mendix"],
 		description : [
 			"- Systematized inter-departmental task requests, coordination, and execution processes",

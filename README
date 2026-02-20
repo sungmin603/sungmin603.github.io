@@ -1,0 +1,4 @@
+## 프로젝트 테스트하기
+1. cd my-portfolio
+2. yarn build
+3. yarn test(안되는 경우 대체: npx serve -s build)
