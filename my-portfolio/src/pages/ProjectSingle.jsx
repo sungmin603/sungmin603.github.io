@@ -10,8 +10,7 @@ import {
 	FiLink,
 	FiImage,
 } from 'react-icons/fi';
-import { projectsData } from '../data/projects';
-import { projectDetailsData } from '../data/projectDetails';
+import { projects as projectsData } from '../data/resumeData';
 
 /* 섹션 공통 래퍼 */
 const Section = ({ icon: Icon, title, iconColor = 'text-indigo-500', children }) => (
@@ -27,7 +26,7 @@ const Section = ({ icon: Icon, title, iconColor = 'text-indigo-500', children })
 const ProjectSingle = () => {
 	const { id } = useParams();
 	const project = projectsData.find((p) => p.id === Number(id));
-	const details = projectDetailsData[Number(id)];
+	const details = project?.detail;
 
 	if (!project) {
 		return (

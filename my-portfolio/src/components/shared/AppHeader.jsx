@@ -226,7 +226,6 @@ const AppHeader = () => {
 						onRequest={showHireMeModal}
 					/>
 				) : null}
-				{showModal ? showHireMeModal : null}
 			</div>
 		</motion.nav>
 	);
