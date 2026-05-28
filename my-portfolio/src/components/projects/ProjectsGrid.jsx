@@ -16,10 +16,10 @@ const ProjectCardContent = ({ project, isMain }) => (
 		</p>
 
 		<div className={isMain ? 'main-project-tags' : 'other-project-tags'}>
-			{project.category.map((cat, idx) => (
+			{project.category?.map((cat, idx) => (
 				<span key={idx} className="pill-sky">{cat}</span>
 			))}
-			{project.tech.map((tech, idx) => (
+			{project.tech?.map((tech, idx) => (
 				<span key={idx} className="pill-green">{tech}</span>
 			))}
 		</div>
@@ -31,7 +31,7 @@ const ProjectCardContent = ({ project, isMain }) => (
 		)}
 
 		<div className={isMain ? 'main-project-desc' : 'other-project-desc'}>
-			{project.description.map((desc, idx) => (
+			{project.description?.map((desc, idx) => (
 				<div key={idx} className={isMain ? 'main-project-desc-item' : 'other-project-desc-item'}>
 					{desc}
 				</div>
@@ -79,7 +79,7 @@ const ProjectsGrid = ({ limit }) => {
 									{project.title}
 								</h3>
 								<div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-									{project.description.map((desc, idx) => (
+									{project.description?.map((desc, idx) => (
 										<div key={idx} className="text-sm text-gray-500">
 											{desc}
 										</div>

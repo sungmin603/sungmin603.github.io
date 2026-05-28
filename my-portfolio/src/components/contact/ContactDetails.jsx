@@ -1,19 +1,20 @@
 import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { profile } from '../../data/resumeData';
 
 const contacts = [
 	{
 		id: 1,
-		name: 'Hanam-si, Gyeonggi-do, Republic of Korea',
+		name: profile.location,
 		icon: <FiMapPin />,
 	},
 	{
 		id: 2,
-		name: '603lsm@gmail.com',
+		name: profile.email,
 		icon: <FiMail />,
 	},
 	{
 		id: 3,
-		name: '+82 10 6410 2463',
+		name: profile.phone,
 		icon: <FiPhone />,
 	},
 ];
@@ -22,12 +23,9 @@ const ContactDetails = () => {
 	return (
 		<div className="w-full">
 			<div className="text-left max-w-xl px-6">
-				{/* <h2 className="font-general-medium text-2xl text-primary-dark dark:text-primary-light mt-12 mb-8">
-					Contact details
-				</h2> */}
 				<ul className="font-general-regular">
 					{contacts.map((contact) => (
-						<li className="flex " key={contact.id}>
+						<li className="flex" key={contact.id}>
 							<i className="text-2xl text-gray-500 dark:text-gray-400 mr-4">
 								{contact.icon}
 							</i>
