@@ -3,11 +3,13 @@ import AppBanner from '../components/shared/AppBanner';
 import ProjectsGrid from '../components/projects/ProjectsGrid';
 import { ProjectsProvider } from '../context/ProjectsContext';
 import Button from '../components/reusable/Button';
+import StrengthCards from '../components/home/StrengthCards';
 
 const Home = () => {
 	return (
 		<div className="container mx-auto">
 			<AppBanner></AppBanner>
+			<StrengthCards />
 
 			<ProjectsProvider>
 				<ProjectsGrid limit={3} ></ProjectsGrid>

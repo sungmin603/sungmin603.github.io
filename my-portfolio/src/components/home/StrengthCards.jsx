@@ -1,0 +1,36 @@
+import { strengths } from '../../data/resumeData';
+
+const StrengthCards = () => {
+	return (
+		<section className="mt-14 sm:mt-20 max-w-5xl mx-auto">
+			<div className="text-center mb-8">
+				<p className="text-sm font-general-medium text-indigo-500 uppercase tracking-widest">
+					Core strengths
+				</p>
+				<h2 className="mt-2 text-2xl sm:text-3xl font-general-semibold text-primary-dark dark:text-primary-light">
+					면접관이 빠르게 확인할 수 있는 핵심 역량
+				</h2>
+			</div>
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+				{strengths.map(({ id, title, description, icon: Icon }) => (
+					<article
+						key={id}
+						className="rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+					>
+						<div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-900 text-indigo-500 dark:text-indigo-200 mb-5">
+							<Icon className="text-2xl" />
+						</div>
+						<h3 className="text-xl font-general-semibold text-ternary-dark dark:text-ternary-light mb-3">
+							{title}
+						</h3>
+						<p className="text-base leading-relaxed text-gray-500 dark:text-gray-300">
+							{description}
+						</p>
+					</article>
+				))}
+			</div>
+		</section>
+	);
+};
+
+export default StrengthCards;

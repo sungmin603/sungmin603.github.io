@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.pill-sky {
+		@apply inline-flex items-center justify-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium text-blue-900 whitespace-nowrap;
+	}
+
+	.dark .pill-sky {
+		@apply bg-blue-900 text-blue-200;
+	}
+
+	.pill-green {
+		@apply inline-flex items-center justify-center rounded-full bg-lime-200 px-3 py-1 text-xs font-medium text-green-800 whitespace-nowrap;
+	}
+
+	.dark .pill-green {
+		@apply bg-green-800 text-lime-200;
+	}
+}

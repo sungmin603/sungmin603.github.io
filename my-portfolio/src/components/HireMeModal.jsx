@@ -1,14 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
-import Button from './reusable/Button';
 import ContactDetails from '../components/contact/ContactDetails';
-
-const selectOptions = [
-	'Web Application',
-	'Mobile Application',
-	'UI/UX Design',
-	'Branding',
-];
 
 const HireMeModal = ({ onClose, onRequest }) => {
 	return (
