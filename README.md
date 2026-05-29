@@ -83,6 +83,26 @@ yarn deploy
 
 - `yarn build`를 먼저 실행한 뒤 `dist`를 `gh-pages` 브랜치로 배포합니다.
 
+
+## GitHub Actions 자동 배포
+
+`.github/workflows/deploy-gh-pages.yml` 워크플로가 `main` 브랜치 push/merge 시 자동 실행됩니다.
+
+동작 순서:
+
+1. `my-portfolio`에서 `npm ci`로 의존성을 설치합니다.
+2. `npm run build`로 Vite 정적 산출물 `my-portfolio/dist`를 생성합니다.
+3. `dist` 내용만 `gh-pages` 브랜치의 root로 publish합니다.
+4. `force_orphan: true`를 사용하므로 `gh-pages` 브랜치에는 배포 산출물만 남고 source code는 포함되지 않습니다.
+
+GitHub 저장소의 Pages 설정은 다음처럼 맞춰주세요.
+
+- Source: `Deploy from a branch`
+- Branch: `gh-pages`
+- Folder: `/ (root)`
+
+> 주의: 이 워크플로는 `npm ci`를 사용하므로 `my-portfolio/package-lock.json`이 repository에 있어야 합니다. package-lock을 삭제한 상태라면 로컬에서 `cd my-portfolio && npm install --package-lock-only`로 lockfile을 생성한 뒤 함께 커밋하세요.
+
 ## 이력서 수정 가이드
 
 > 앞으로 이력서 내용이 바뀌면 우선 `my-portfolio/src/data/resumeData.js`를 수정하세요. 코드 구조가 바뀌더라도 이 섹션은 계속 최신 상태로 유지합니다.
