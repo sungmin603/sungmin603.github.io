@@ -1,6 +1,6 @@
 // src/context/ExperienceContext.jsx
 import { useState, createContext } from "react";
-import { experienceData } from "../data/experienceData";
+import { experience as experienceData } from "../data/resumeData";
 
 export const ExperienceContext = createContext();
 
