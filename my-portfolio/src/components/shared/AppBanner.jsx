@@ -63,12 +63,14 @@ const AppBanner = () => {
 							key={resume.id}
 							download={resume.downloadName}
 							href={resume.file}
-							className="font-general-medium flex justify-center items-center w-full sm:w-52 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
+							className="font-general-medium flex justify-center items-center w-full sm:w-44 text-sm border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
 							aria-label={resume.label}
 						>
-							<FiArrowDownCircle className="mr-2 sm:mr-3 h-5 w-5 sm:w-6 sm:h-6 duration-100" />
-							<span className="text-sm sm:text-base font-general-medium duration-100">
-								{resume.label}
+							<FiArrowDownCircle className="mr-2 h-5 w-5 duration-100 shrink-0" />
+							<span className="flex flex-col items-center leading-tight font-general-medium duration-100">
+								{resume.labelLines?.map((line) => (
+									<span key={line}>{line}</span>
+								)) || resume.label}
 							</span>
 						</a>
 					))}

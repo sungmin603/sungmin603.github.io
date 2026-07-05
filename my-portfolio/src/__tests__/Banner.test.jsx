@@ -21,7 +21,7 @@ test('can download english and korean resumes from the banner', async () => {
 	const { user } = setupUserEvent(<AppBanner />);
 
 	for (const resume of profile.resumes) {
-		const downloadResume = screen.getByText(resume.label);
+		const downloadResume = screen.getByLabelText(resume.label);
 		expect(downloadResume).toBeInTheDocument();
 
 		const downloadResumeButton = downloadResume.closest('a');
