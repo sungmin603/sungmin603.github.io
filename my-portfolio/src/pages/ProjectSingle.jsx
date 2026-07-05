@@ -8,12 +8,19 @@ import {
 	FiCheckSquare,
 	FiAward,
 	FiLink,
-	FiImage,
+	FiGitBranch,
 } from 'react-icons/fi';
-import { projectsData } from '../data/projects';
-import { projectDetailsData } from '../data/projectDetails';
+import ArchitectureDiagram from '../components/projects/ArchitectureDiagram';
+import { projects as projectsData } from '../data/resumeData';
 
 /* 섹션 공통 래퍼 */
+const formatParagraphs = (text) =>
+	text?.split('\n').filter(Boolean).map((paragraph, idx) => (
+		<p key={idx} className="text-ternary-dark dark:text-ternary-light leading-relaxed text-base">
+			{paragraph}
+		</p>
+	));
+
 const Section = ({ icon: Icon, title, iconColor = 'text-indigo-500', children }) => (
 	<section className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 sm:p-8">
 		<h2 className="flex items-center gap-2 text-lg sm:text-xl font-bold text-primary-dark dark:text-primary-light mb-5">
@@ -27,7 +34,7 @@ const Section = ({ icon: Icon, title, iconColor = 'text-indigo-500', children })
 const ProjectSingle = () => {
 	const { id } = useParams();
 	const project = projectsData.find((p) => p.id === Number(id));
-	const details = projectDetailsData[Number(id)];
+	const details = project?.detail;
 
 	if (!project) {
 		return (
@@ -94,47 +101,39 @@ const ProjectSingle = () => {
 			{details ? (
 				<div className="space-y-6">
 
-					{/* 이미지 갤러리 */}
-					{details.images?.length > 0 && (
-						<Section icon={FiImage} title="Gallery" iconColor="text-purple-500">
-							<div
-								className={`grid gap-4 ${
-									details.images.length === 1
-										? 'grid-cols-1'
-										: 'grid-cols-1 sm:grid-cols-2'
-								}`}
-							>
-								{details.images.map((img, idx) => (
-									<div
-										key={idx}
-										className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
-									>
-										<img
-											src={img}
-											alt={`${project.title} screenshot ${idx + 1}`}
-											className="w-full h-auto object-cover"
-										/>
-									</div>
-								))}
-							</div>
-						</Section>
-					)}
-
 					{/* Overview */}
 					{details.overview && (
 						<Section icon={FiInfo} title="Overview" iconColor="text-indigo-500">
-							<p className="text-ternary-dark dark:text-ternary-light leading-relaxed text-base">
-								{details.overview}
-							</p>
+							<div className={details.images?.length > 0 ? 'grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start' : ''}>
+								<div className="space-y-4">
+									{formatParagraphs(details.overview)}
+								</div>
+								{details.images?.length > 0 && (
+									<div className="grid grid-cols-1 gap-3">
+										{details.images.map((img, idx) => (
+											<div
+												key={idx}
+												className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900"
+											>
+												<img
+													src={img}
+													alt={`${project.title} visual ${idx + 1}`}
+													className="w-full max-h-64 object-contain"
+												/>
+											</div>
+										))}
+									</div>
+								)}
+							</div>
 						</Section>
 					)}
 
 					{/* Background */}
 					{details.background && (
 						<Section icon={FiBookOpen} title="Background" iconColor="text-amber-500">
-							<p className="text-ternary-dark dark:text-ternary-light leading-relaxed text-base">
-								{details.background}
-							</p>
+							<div className="space-y-4">
+								{formatParagraphs(details.background)}
+							</div>
 						</Section>
 					)}
 
@@ -171,6 +170,17 @@ const ProjectSingle = () => {
 									</li>
 								))}
 							</ul>
+						</Section>
+					)}
+
+					{/* System Architecture */}
+					{details.architecture?.length > 0 && (
+						<Section
+							icon={FiGitBranch}
+							title="System Architecture"
+							iconColor="text-purple-500"
+						>
+							<ArchitectureDiagram steps={details.architecture} />
 						</Section>
 					)}
 

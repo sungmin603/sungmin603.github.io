@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import HireMeModal from '../components/HireMeModal';
 
-// Get user event
 function setupUserEvent(jsx) {
 	return {
 		user: userEvent.setup(),
@@ -10,16 +9,13 @@ function setupUserEvent(jsx) {
 	};
 }
 
-test('modal shows the children and a close button', async () => {
+test('modal shows the contact details and a close button', async () => {
 	const { user } = setupUserEvent(<HireMeModal />);
 
-	expect(
-		screen.getByText(/What project are you looking for?/i)
-	).toBeInTheDocument();
+	expect(screen.getByText(/Contact details/i)).toBeInTheDocument();
+	expect(screen.getByText(/603lsm@gmail.com/i)).toBeInTheDocument();
 
-	const closeModal = screen.getByText(/Close/i);
-	expect(closeModal).toBeInTheDocument();
-
-	const closeModalButton = closeModal.parentElement;
+	const closeModalButton = screen.getByLabelText(/Close Modal/i);
 	expect(closeModalButton).toBeInTheDocument();
+	await user.click(closeModalButton);
 });

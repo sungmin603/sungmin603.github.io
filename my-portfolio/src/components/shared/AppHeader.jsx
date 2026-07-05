@@ -50,13 +50,13 @@ const AppHeader = () => {
 							{activeTheme === 'dark' ? (
 								<img
 									src={logoDark}
-									className="w-logo"
+									className="h-10 w-auto max-w-[10rem] sm:h-12 sm:max-w-[12rem]"
 									alt="Dark Logo"
 								/>
 							) : (
 								<img
 									src={logoLight}
-									className="w-logo"
+									className="h-10 w-auto max-w-[10rem] sm:h-12 sm:max-w-[12rem]"
 									alt="Dark Logo"
 								/>
 							)}
@@ -226,7 +226,6 @@ const AppHeader = () => {
 						onRequest={showHireMeModal}
 					/>
 				) : null}
-				{showModal ? showHireMeModal : null}
 			</div>
 		</motion.nav>
 	);

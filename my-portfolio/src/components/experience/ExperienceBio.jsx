@@ -61,7 +61,7 @@ export default function ExperienceBio() {
           {teaching.map((item, idx) => (
             <div
               key={item.id}
-              className={`block sm:flex sm:gap-10 p-4 border border-gray-200 dark:border-gray-700 rounded-lg ${idx !== item.length - 1 ? "mb-2" : ""}`}
+              className={`block sm:flex sm:gap-10 p-4 border border-gray-200 dark:border-gray-700 rounded-lg ${idx !== teaching.length - 1 ? "mb-2" : ""}`}
             >
               <div className="w-full sm:w-1/4 mb-7 sm:mb-0 flex justify-center sm:justify-start">
                 {item.logo && (
@@ -99,7 +99,7 @@ export default function ExperienceBio() {
           {publications.map((pub, idx) => (
             <li
               key={pub.id}
-              className={`p-4 border border-gray-200 dark:border-gray-700 rounded-lg ${idx !== pub.length - 1 ? "mb-2" : ""}`}
+              className={`p-4 border border-gray-200 dark:border-gray-700 rounded-lg ${idx !== publications.length - 1 ? "mb-2" : ""}`}
             >
               <p className="text-ternary-dark dark:text-ternary-light">
                 [{pub.type}] {pub.title} – ({pub.publisher}, {pub.year})
@@ -118,7 +118,7 @@ export default function ExperienceBio() {
           {awards.map((award,idx) => (
             <li
               key={award.id}
-              className={`p-4 border border-gray-200 dark:border-gray-700 rounded-lg ${idx !== award.length - 1 ? "mb-2" : ""}`}
+              className={`p-4 border border-gray-200 dark:border-gray-700 rounded-lg ${idx !== awards.length - 1 ? "mb-2" : ""}`}
             >
               <p className="text-ternary-dark dark:text-ternary-light">
                 {award.title} – ({award.organization}, {award.year})

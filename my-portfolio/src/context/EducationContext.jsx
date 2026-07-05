@@ -1,5 +1,5 @@
 import { useState, createContext } from 'react';
-import { educationData } from '../data/educationData';
+import { education as educationData } from '../data/resumeData';
 // import { clientsHeading as clientsPageHeading } from '../data/clientsData';
 // import { clientsData as clientsDataJson } from '../data/clientsData';
 
