@@ -82,7 +82,7 @@ const projectDetailsById = {
 
 	6: {
 		overview:
-			'ARISE와 Code Platform은 반도체 엔지니어링 지식 자산의 검색성과 재사용성을 높이기 위해 개발한 RAG 기반 검색 플랫폼입니다.\n\nARISE는 불량 보고서, 분석 보고서, 성분 분석 자료 등 PPT 리포트 검색을 위한 플랫폼이며, Code Platform은 반도체 데이터 분석에 사용되는 SQL query와 Python script를 검색하는 플랫폼입니다.',
+			'ppt-RAG와 Code-RAG은 반도체 엔지니어링 지식 자산의 검색성과 재사용성을 높이기 위해 개발한 RAG 기반 검색 플랫폼입니다.\n\nppt-RAG는 불량 보고서, 분석 보고서, 성분 분석 자료 등 PPT 리포트 검색을 위한 플랫폼이며, Code-RAG은 반도체 데이터 분석에 사용되는 SQL query와 Python script를 검색하는 플랫폼입니다.',
 		background:
 			'기존에는 보고서, SQL query, Python script 등 중요한 engineering knowledge가 개인 또는 부서별로 분산 관리되어 재사용이 어렵고, keyword 기반 검색만으로는 원하는 자료를 찾기 어려웠습니다.\n\n특히 반도체 데이터 분석 업무에서는 내부 데이터 구조, query 작성 방식, 기존 분석 자산에 대한 이해가 필요하기 때문에, 비숙련자가 기존 지식 자산을 검색하고 재사용하기 어려운 문제가 있었습니다.',
 		details: [
@@ -94,8 +94,8 @@ const projectDetailsById = {
 			'SSE 기반 실시간 응답 구현으로 검색 대기 경험 개선',
 		],
 		achievements: [
-			'ARISE: naive RAG 대비 검색 정확도 60% → 90% 개선',
-			'Code Platform: naive RAG 대비 검색 정확도 20% → 70% 개선',
+			'ppt-RAG: naive RAG 대비 검색 정확도 60% → 90% 개선',
+			'Code-RAG: naive RAG 대비 검색 정확도 20% → 70% 개선',
 			'각 플랫폼별 약 30MM 공수 절감 효과 산정',
 			'Report, SQL/Python 등 내부 engineering knowledge의 접근성과 재사용성 개선',
 			'비숙련자도 기존 분석 자산을 검색·이해·활용할 수 있는 기반 구축',
@@ -401,7 +401,7 @@ export const resumeData = {
 		id: 4,
 		isFeatured: false,
 		isMain: true,
-		title: 'CADI — 이미지 이상감지 플랫폼',
+		title: '이미지 이상감지 플랫폼',
 		period: '2026.01 - 2026.06',
 		role: ["Project Lead", "Main Developer"],
 		category: ["Production AI", "Image Anomaly Detection"],
@@ -415,7 +415,7 @@ export const resumeData = {
 		id: 5,
 		isFeatured: false,
 		isMain: true,		
-		title: 'DAS — RCA 데이터 분석 플랫폼',
+		title: 'RCA 데이터 분석 플랫폼',
 		period: '2022.03 - 2023.10',
 		role: ["Project Lead", "Main Developer"],
 		category: ["RCA", "Data Platform"],
@@ -429,7 +429,7 @@ export const resumeData = {
 		id: 6,
 		isFeatured: false,
 		isMain: true,
-		title: 'ARISE & Code Platform — RAG 검색 플랫폼',
+		title: 'RAG 검색 플랫폼',
 		period: '2025.03 - 2025.10',
 		role: ["Project Lead", "Main Developer"],
 		category: ["LLM/RAG", "Knowledge Platform"],
