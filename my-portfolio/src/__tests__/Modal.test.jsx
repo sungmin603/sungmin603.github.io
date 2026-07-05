@@ -15,7 +15,7 @@ test('modal shows the contact details and a close button', async () => {
 	expect(screen.getByText(/Contact details/i)).toBeInTheDocument();
 	expect(screen.getByText(/603lsm@gmail.com/i)).toBeInTheDocument();
 
-	const closeModalButton = screen.getByRole('button');
+	const closeModalButton = screen.getByLabelText(/Close Modal/i);
 	expect(closeModalButton).toBeInTheDocument();
 	await user.click(closeModalButton);
 });

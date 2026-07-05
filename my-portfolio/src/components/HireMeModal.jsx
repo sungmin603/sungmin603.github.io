@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
 import ContactDetails from '../components/contact/ContactDetails';
+import Button from './reusable/Button';
 
 const HireMeModal = ({ onClose, onRequest }) => {
 	return (

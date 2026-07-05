@@ -56,8 +56,24 @@ const AppBanner = () => {
 						duration: 0.9,
 						delay: 0.3,
 					}}
-					className="flex justify-center sm:block"
+					className="flex flex-col sm:flex-row justify-center sm:justify-start gap-3 mt-12 mb-6 sm:mb-0"
 				>
+<<<<<<< HEAD
+					{profile.resumes?.map((resume) => (
+						<a
+							key={resume.id}
+							download={resume.downloadName}
+							href={resume.file}
+							className="font-general-medium flex justify-center items-center w-full sm:w-52 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
+							aria-label={resume.label}
+						>
+							<FiArrowDownCircle className="mr-2 sm:mr-3 h-5 w-5 sm:w-6 sm:h-6 duration-100" />
+							<span className="text-sm sm:text-base font-general-medium duration-100">
+								{resume.label}
+							</span>
+						</a>
+					))}
+=======
 					<a
 						download={profile.resumeDownloadName}
 						href={profile.resumeFile}
@@ -69,19 +85,21 @@ const AppBanner = () => {
 							Download CV
 						</span>
 					</a>
+>>>>>>> origin/main
 				</motion.div>
 			</div>
 			<motion.div
 				initial={{ opacity: 0, y: -180 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-				className="w-full sm:w-2/3 text-right float-right mt-8 sm:mt-0"
+				className="w-full sm:w-7/12 md:w-1/2 lg:w-5/12 text-right float-right mt-8 sm:mt-0"
 			>
 				<img
 					src={
 						activeTheme === 'dark' ? developerLight : developerDark
 					}
 					alt="Developer"
+					className="w-4/5 sm:w-full max-w-sm md:max-w-md mx-auto sm:ml-auto"
 				/>
 			</motion.div>
 		</motion.section>

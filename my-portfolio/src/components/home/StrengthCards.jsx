@@ -4,14 +4,11 @@ const StrengthCards = () => {
 	return (
 		<section className="mt-14 sm:mt-20 max-w-5xl mx-auto">
 			<div className="text-center mb-8">
-				<p className="text-sm font-general-medium text-indigo-500 uppercase tracking-widest">
-					Core strengths
-				</p>
-				<h2 className="mt-2 text-2xl sm:text-3xl font-general-semibold text-primary-dark dark:text-primary-light">
-					면접관이 빠르게 확인할 수 있는 핵심 역량
+				<h2 className="text-2xl sm:text-3xl font-general-semibold text-primary-dark dark:text-primary-light">
+					Core Strengths
 				</h2>
 			</div>
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 				{strengths.map(({ id, title, description, icon: Icon }) => (
 					<article
 						key={id}

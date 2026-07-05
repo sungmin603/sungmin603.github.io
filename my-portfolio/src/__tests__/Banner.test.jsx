@@ -17,17 +17,17 @@ test('it shows the title in the banner', () => {
 	expect(screen.getByText(profile.greeting)).toBeInTheDocument();
 });
 
-test('can download cv when clicked on download cv button', async () => {
+test('can download english and korean resumes from the banner', async () => {
 	const { user } = setupUserEvent(<AppBanner />);
 
-	const downloadCV = screen.getByText(/Download CV/i);
+	for (const resume of profile.resumes) {
+		const downloadResume = screen.getByText(resume.label);
+		expect(downloadResume).toBeInTheDocument();
 
-	expect(downloadCV).toBeInTheDocument();
+		const downloadResumeButton = downloadResume.closest('a');
+		expect(downloadResumeButton).toHaveAttribute('href', resume.file);
+		expect(downloadResumeButton).toHaveAttribute('download', resume.downloadName);
 
-	const downloadCVButton = downloadCV.closest('a');
-
-	expect(downloadCVButton).toHaveAttribute('href', profile.resumeFile);
-	expect(downloadCVButton).toHaveAttribute('download', profile.resumeDownloadName);
-
-	await user.click(downloadCVButton);
+		await user.click(downloadResumeButton);
+	}
 });

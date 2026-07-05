@@ -1,7 +1,7 @@
 // Resume content single source of truth.
 // 이력서 내용 수정은 가능하면 이 파일에서 시작하세요. README.md의 "이력서 수정 가이드"도 함께 갱신하세요.
 
-import { FiCpu, FiDatabase, FiLayers } from 'react-icons/fi';
+import { FiCpu, FiDatabase, FiLayers, FiUsers } from 'react-icons/fi';
 
 import WorkImg1 from '../images/brands/Samsung.png';
 import WorkImg2 from '../images/brands/HyundaiMobis.png';
@@ -18,19 +18,31 @@ import proj5 from '../images/proj5.png';
 const projectDetailsById = {
 	4: {
 		overview:
-			'대규모 산업 환경에서 사용 가능한 확장성 높은 이미지 기반 이상 탐지 시스템을 설계·개발한 프로젝트입니다.',
+			'CADI는 반도체 계측 이미지에서 기존 통계 수치 기반 모니터링으로는 탐지하기 어려운 이미지 기반 불량을 탐지하기 위해 개발한 AI 이상감지 플랫폼입니다.\n\n핵심 아이디어는 동일한 패턴과 정렬 조건의 이미지 그룹 내에서 서로 다르게 나타나는 특징을 위치 기반으로 비교하고, 통계 기반으로 이상 여부를 판단하는 것입니다. 이를 통해 신규 제품이나 신규 불량에도 별도 모델 재학습 없이 적용 가능한 범용 이상감지 알고리즘과 시스템을 구현했습니다.',
 		background:
-			'CDSEM 장비에서 촬영된 이미지로부터 공정 이상을 자동으로 판별하는 시스템이 필요했습니다. 기존에는 엔지니어가 이미지를 수동으로 검토해야 했으며, 물량 증가에 따른 자동화가 요구되었습니다.',
+			'반도체 계측 업무에서는 수치화된 계측값만으로 관리되는 경우가 많아, 이미지에 나타나는 pattern defect, particle, abnormal structure와 같은 비정형 불량은 탐지가 어렵습니다.\n\n또한 신규 제품이나 신규 공정 step에서는 충분한 학습 데이터가 확보되기 어렵기 때문에, 특정 defect class에 의존하는 supervised model보다는 다양한 제품과 불량 유형에 적용 가능한 generic anomaly detection 방식이 필요했습니다.',
 		details: [
-			'DINOv2 기반 이미지 임베딩 및 이상 탐지 알고리즘 설계',
-			'GPU 추론 인프라를 k8s 위에서 확장 가능하게 구축',
-			'FastAPI를 사용한 REST API 서버 개발',
-			'Postgres & MinIO를 활용한 이미지 메타데이터 및 원본 파일 관리',
-			'프로젝트 전체 생애주기 리드 (요구사항 정의 → 설계 → 개발 → 배포)',
+			'개발 리드 및 핵심 개발자로 과제 기획, 알고리즘 설계, 테스트, 시스템 구현 수행',
+			'동일 패턴/정렬 조건의 이미지 그룹 내 상대적 차이를 비교하는 범용 이상감지 알고리즘 설계',
+			'image grouping, preprocessing, feature extraction, anomaly scoring, heatmap visualization pipeline 구현',
+			'Multi-GPU inference 및 병렬 처리 기반의 대량 이미지 처리 구조 구축',
+			'Backend, frontend, database, 결과 시각화, 알림 기능을 포함한 end-to-end 시스템 개발',
+			'반도체 이미지 이상 탐지를 현업에서 활용 가능한 production AI service로 구현',
 		],
 		achievements: [
-			'수동 검수 대비 검토 시간 대폭 단축',
-			'확장 가능한 GPU 클러스터 추론 파이프라인 구축 완료',
+			'Baseline 대비 detection recall 67% → 90% 개선',
+			'Single-thread 처리 대비 약 40× throughput 개선',
+			'약 30MM 공수 절감 효과 산정',
+			'기존 수치 기반 방식으로 탐지하기 어려웠던 이미지 기반 불량 탐지 가능',
+			'반도체 계측 이미지에 적용 가능한 범용 이상탐지 알고리즘 개발',
+		],
+		architecture: [
+			'CD-SEM / Metrology Images',
+			'Image Grouping & Metadata Mapping',
+			'Preprocessing Pipeline',
+			'AI Feature Extraction / Anomaly Scoring',
+			'Result DB & Object Storage',
+			'Dashboard / Heatmap Visualization / Notification',
 		],
 		links: [],
 		images: [proj1],
@@ -38,18 +50,31 @@ const projectDetailsById = {
 
 	5: {
 		overview:
-			'R&D 센터 내 불량 원인 분석을 위한 인하우스 데이터 분석 툴을 자체 개발한 프로젝트입니다.',
+			'DAS는 반도체 연구소 환경에서 불량 원인 분석을 지원하기 위해 개발한 RCA 데이터 분석 플랫폼입니다.\n\n공정, 설비, chamber, reticle, 계측, 검사, overlay, VM, FDC, 지연시간 등 다양한 제조 데이터를 통합하여 불량 원인 후보를 정량적으로 탐색하고, 엔지니어가 분석 결과를 해석할 수 있도록 지원합니다.',
 		background:
-			'다양한 공정 데이터가 여러 시스템에 분산되어 있어 원인 분석에 많은 시간이 소요되었습니다. 이를 통합·자동화하기 위한 분석 시스템이 필요했습니다.',
+			'반도체 연구소의 RCA 업무는 신규 제품, 신규 공정, 신규 설비 평가가 많아 샘플 수가 적고 데이터 구조가 복잡합니다. 또한 공정 이력이 분기되거나 데이터 key가 일관되지 않아 비교군과 대조군을 안정적으로 구성하기 어려운 문제가 있습니다.\n\n기존 RCA는 전문가의 경험과 수작업 분석에 대한 의존도가 높았기 때문에, 다양한 제조 데이터를 통합하고 반복 분석 workflow를 시스템화할 필요가 있었습니다.',
 		details: [
-			'PaaS 환경에서 Python 기반 데이터 파이프라인 구축',
-			'통계적 분석 방법론 적용 (상관 분석, 분포 분석 등)',
-			'Spotfire를 활용한 대시보드 및 시각화 구현',
-			'지속적인 데이터 업데이트 자동화',
+			'단독 개발자로 기획, 데이터 구조 설계, 분석 workflow 설계, 개발, 운영까지 end-to-end 수행',
+			'Data Lake 기반 공정·계측·검사·품질 데이터 수집 및 전처리 pipeline 구축',
+			'공정 이력 분기와 데이터 불일치를 보정하기 위한 제조 데이터 전처리 로직 설계',
+			'데이터 유형별 통계 분석 및 유의차 요인 탐색 기능 구현',
+			'분석 결과 시각화, raw data 제공, self-service analysis 환경 구축',
+			'RCA 전문가뿐 아니라 비숙련 엔지니어도 사용할 수 있는 분석 workflow 제공',
 		],
 		achievements: [
-			'불량 원인 분석 시간 단축',
-			'엔지니어 셀프서비스 분석 환경 제공',
+			'약 40MM 공수 절감 효과 산정',
+			'반도체 연구소의 대표 RCA 분석 플랫폼으로 활용',
+			'비숙련 엔지니어도 구조화된 RCA 분석을 수행할 수 있는 self-service 환경 제공',
+			'RCA 전문가의 분석 workflow를 시스템화하여 분석 재현성과 접근성 개선',
+			'반도체 불량 분석 경험을 실제 data platform으로 구현',
+		],
+		architecture: [
+			'Manufacturing Data Sources\n(Process / Equipment / Metrology / Inspection / VM / FDC)',
+			'Data Lake API / Batch Loading',
+			'Preprocessing & Data Alignment',
+			'Statistical RCA / Candidate Ranking',
+			'Result Tables & Visualization',
+			'Self-Service RCA Dashboard',
 		],
 		links: [],
 		images: [proj3],
@@ -57,25 +82,36 @@ const projectDetailsById = {
 
 	6: {
 		overview:
-			'사내 불량 보고서 PPT 파일을 자연어로 검색하고 열람할 수 있는 웹 플랫폼을 개발한 프로젝트입니다.',
+			'ARISE와 Code Platform은 반도체 엔지니어링 지식 자산의 검색성과 재사용성을 높이기 위해 개발한 RAG 기반 검색 플랫폼입니다.\n\nARISE는 불량 보고서, 분석 보고서, 성분 분석 자료 등 PPT 리포트 검색을 위한 플랫폼이며, Code Platform은 반도체 데이터 분석에 사용되는 SQL query와 Python script를 검색하는 플랫폼입니다.',
 		background:
-			'수천 개의 PPT 보고서가 서버에 저장되어 있지만 키워드 검색이 불가능했습니다. LLM과 RAG를 활용하여 자연어 질의로 관련 보고서를 빠르게 찾는 시스템을 구축하였습니다.',
+			'기존에는 보고서, SQL query, Python script 등 중요한 engineering knowledge가 개인 또는 부서별로 분산 관리되어 재사용이 어렵고, keyword 기반 검색만으로는 원하는 자료를 찾기 어려웠습니다.\n\n특히 반도체 데이터 분석 업무에서는 내부 데이터 구조, query 작성 방식, 기존 분석 자산에 대한 이해가 필요하기 때문에, 비숙련자가 기존 지식 자산을 검색하고 재사용하기 어려운 문제가 있었습니다.',
 		details: [
-			'LLM + LangGraph 기반 Modular RAG 파이프라인 구현',
-			'Qdrant 벡터 DB를 활용한 유사도 검색',
-			'MySQL로 파일 메타데이터 관리',
-			'FastAPI 백엔드 + Vue 프론트엔드 개발',
-			'Docker 컨테이너 기반 배포 환경 구성',
+			'Project lead 및 핵심 개발자로 RAG 검색 구조 설계와 구현 수행',
+			'Vector DB schema 설계 및 report/code metadata 정형화 구조 구축',
+			'PPT report, SQL query, Python script의 검색 품질 향상을 위한 metadata extraction pipeline 구현',
+			'자연어, keyword, augmented keyword 기반 adaptive retrieval 구조 구현',
+			'QA 평가 체계 구축 및 검색 품질 개선',
+			'SSE 기반 실시간 응답 구현으로 검색 대기 경험 개선',
 		],
 		achievements: [
-			'자연어 질의 기반 PPT 보고서 검색 기능 구현',
-			'검색 정확도 및 재현율 개선을 위한 RAG 파이프라인 최적화',
+			'ARISE: naive RAG 대비 검색 정확도 60% → 90% 개선',
+			'Code Platform: naive RAG 대비 검색 정확도 20% → 70% 개선',
+			'각 플랫폼별 약 30MM 공수 절감 효과 산정',
+			'Report, SQL/Python 등 내부 engineering knowledge의 접근성과 재사용성 개선',
+			'비숙련자도 기존 분석 자산을 검색·이해·활용할 수 있는 기반 구축',
+		],
+		architecture: [
+			'Reports / SQL Queries / Python Scripts',
+			'OCR & Metadata Extraction',
+			'Embedding & Vector DB',
+			'Query Augmentation / Adaptive Retrieval',
+			'Re-ranking / QA Evaluation',
+			'Search UI / Streaming Response',
 		],
 		links: [],
 		images: [proj5],
 	},
 };
-
 const projectDetailTemplate = (project) => ({
 	overview:
 		project?.description?.map((item) => item.replace(/^-\s*/, '')).join(' ') ||
@@ -103,11 +139,27 @@ export const resumeData = {
 	profile: {
 		name: 'SungMin Lee',
 		greeting: 'Hi, I am SungMin',
-		headline: 'A Full-Stack Developer & Data Scientist',
+		headline: 'Semiconductor AI Engineer',
 		summary:
-			'AI, data pipeline, web platform, infrastructure를 연결해 실제 현장 문제를 해결하는 엔지니어입니다.',
+			'반도체 현업의 Workflow를 AI/Data 시스템으로 설계, 개발, 운영해 온 반도체 AI Engineer입니다.',
 		resumeFile: '/files/250921-Resume-Lee.pdf',
 		resumeDownloadName: 'Resume-Lee.pdf',
+		resumes: [
+			{
+				id: 'en',
+				label: 'Download Resume EN',
+				file: '/resume/Sungmin_Lee_Resume_EN.pdf',
+				downloadName: 'Sungmin_Lee_Resume_EN.pdf',
+				note: '첨부 이력서 파일을 public/resume 경로에 추가하면 연결되는 placeholder 경로입니다.',
+			},
+			{
+				id: 'ko',
+				label: 'Download Resume KO',
+				file: '/resume/Sungmin_Lee_Resume_KO.pdf',
+				downloadName: 'Sungmin_Lee_Resume_KO.pdf',
+				note: '첨부 이력서 파일을 public/resume 경로에 추가하면 연결되는 placeholder 경로입니다.',
+			},
+		],
 		location: 'Hanam-si, Gyeonggi-do, Republic of Korea',
 		email: '603lsm@gmail.com',
 		phone: '+82 10 6410 2463',
@@ -120,21 +172,27 @@ export const resumeData = {
 	strengths: [
 		{
 			id: 1,
-			title: 'AI / LLM Engineering',
-			description: 'RAG, LangGraph, PyTorch, image anomaly detection 기반으로 AI 서비스를 설계·구현합니다.',
+			title: '반도체 현업 AI 적용 및 운영 경험',
+			description: '이미지 이상 탐지, RAG 검색 플랫폼 등 반도체 현업에 실질적인 AI 시스템 개발 및 운영',
 			icon: FiCpu,
 		},
 		{
 			id: 2,
-			title: 'Data Engineering',
-			description: 'ETL, Airflow, SQL/NoSQL, 분석 대시보드를 통해 제조 데이터를 분석 가능한 형태로 만듭니다.',
+			title: '대규모 반도체 데이터 처리 및 플랫폼 개발 역량',
+			description: '랏 이력, 이미지, 레시피, 리포트 등 반도체의 다양한 데이터를 수집, 전처리, 분석, 서비스화하는 end-to-end 플랫폼 개발 및 운영',
 			icon: FiDatabase,
 		},
 		{
 			id: 3,
-			title: 'Full-Stack Delivery',
-			description: 'FastAPI, Vue/Mendix, Docker 기반으로 요구사항 정의부터 배포·운영까지 리드합니다.',
+			title: '반도체 데이터 도메인 역량',
+			description: 'DRAM 제품 불량 분석 및 주요 랏 건강도 관리를 통한 수율 개선 수행',
 			icon: FiLayers,
+		},
+		{
+			id: 4,
+			title: '리더십 & 역량',
+			description: '개발 조직 운영, 과제 기획, 개발 정책, 개발 리드, 아키텍처 설계, 과제 간 유기적 연결, 운영 체계 구축, 신기술 학습 및 현업 적용 역량 보유',
+			icon: FiUsers,
 		},
 	],
 	about: [
@@ -341,15 +399,13 @@ export const resumeData = {
 		id: 4,
 		isFeatured: false,
 		isMain: true,
-		title: 'CDSEM Anomaly Detection Interpreter',
-		period: '2026 - present',
-		role: ["Project Lead","Main Developer"],
-		category: ["AI & ML"],
-		tech : ["Python","k8S","Dinov3","image-processing","FastAPI","Postgres","minIO"],
+		title: 'CADI — 이미지 이상감지 플랫폼',
+		period: '2026.01 - 2026.06',
+		role: ["Project Lead", "Main Developer"],
+		category: ["Production AI", "Image Anomaly Detection"],
+		tech : ["Python", "Multi-GPU", "Image Processing", "FastAPI", "Postgres", "Object Storage"],
 		description : [
-			"- Development of a scalable Image Anomaly Detection System for large-scale industrial environments",
-			"- Architected an image-based anomaly detection algorithm and implemented a scalable GPU inference infrastructure",
-			"- Led the project end-to-end"
+			"계측 이미지에서 기존 통계 수치 기반으로는 탐지하기 어려운 이미지 기반 불량을 탐지하기 위한 반도체 AI 이상감지 플랫폼입니다."
 		],
 		// img: WebImage1,
 	},
@@ -357,15 +413,13 @@ export const resumeData = {
 		id: 5,
 		isFeatured: false,
 		isMain: true,		
-		title: 'Data Analysis System',
-		period: '2018 - present',
-		role: ["Project Lead","Main Developer"],
-		category: ["Data & Analytics"],
-		tech : ["PaaS","Python","Stastics","Spotfire"],
+		title: 'DAS — RCA 데이터 분석 플랫폼',
+		period: '2022.03 - 2023.10',
+		role: ["Project Lead", "Main Developer"],
+		category: ["RCA", "Data Platform"],
+		tech : ["Data Lake", "Python", "Statistics", "Spotfire"],
 		description : [
-			"- Created an in-house analytics tool to identify root causes of defects in R&D center",
-			"- Built data pipelines, applied analytical methods, and visualized results",
-			"- Led and developed the full project lifecycle independently"
+			"반도체 연구소 환경에서 불량 원인 분석을 지원하기 위해 다양한 제조 데이터를 통합하고 정량적으로 원인 후보를 탐색하는 RCA 데이터 분석 플랫폼입니다."
 		],
 		// img: WebImage1,
 	},
@@ -373,15 +427,13 @@ export const resumeData = {
 		id: 6,
 		isFeatured: false,
 		isMain: true,
-		title: 'PPT Report Search Web Platform',
-		period: '2025 - present',
-		role: ["Project Lead","Main Developer"],
-		category: ["AI & ML","Web & Infra"],
-		tech : ["LLM","Langgraph","Qdrant","MySQL","FastAPI","Docker","Vue"],
+		title: 'ARISE & Code Platform — RAG 검색 플랫폼',
+		period: '2025.03 - 2025.10',
+		role: ["Project Lead", "Main Developer"],
+		category: ["LLM/RAG", "Knowledge Platform"],
+		tech : ["LLM", "LangGraph", "Vector DB", "MySQL", "FastAPI", "Docker", "Vue"],
 		description : [
-			"- Developed a web platform for searching, and browsing defect report PPT files",
-			"- Implemented Modular RAG for natural language search",
-			"- Led the project end-to-end"
+			"반도체 엔지니어링 지식 자산의 검색성과 재사용성을 높이기 위해 개발한 RAG 기반 검색 플랫폼입니다."
 		],
 		// img: MobileImage1,
 	},	
